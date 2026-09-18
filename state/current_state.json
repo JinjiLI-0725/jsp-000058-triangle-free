@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_threshold_slack_localization_proved",
+  "status": "induction_two_connected_threshold_shortcut_falsified",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: rigorously localize the slack layers needed to certify a selected five-set at the A/B threshold",
-  "next_goal": "Prove A_window/B_window: select five vertices on each nonautomatic critical core controlling cuts through slack U_X-T-1",
+  "current_strategy": "Single bottleneck: determine whether 2-connected critical cores admit constant-slack certification of specified five-sets at the A/B thresholds",
+  "next_goal": "Select X controlling the graph-dependent A_window/B_window; universal constant windows fail even for threshold decisions on 2-connected cores",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -299,6 +299,29 @@
       "tests_passed": 5,
       "elapsed_seconds": 82.99,
       "scope": "Every five-set of four fixed order-10 graphs, every remainder coloring and integer threshold 0 through U+1; known positive-slack obstruction and existing full-cut regressions",
+      "diff_check": "passed",
+      "compute_job_finished": true
+    }
+  },
+  "induction_two_connected_slack": {
+    "note": "notes/INDUCTION_TWO_CONNECTED_SLACK.md",
+    "family_status": "PROVED",
+    "constant_slack_A_threshold_test": "FALSIFIED",
+    "constant_slack_B_threshold_test": "FALSIFIED",
+    "family": "F_(a,h): J_a and B_h share deleted vertices 0,1 in A_0; subdivide private edge 79 to length nine",
+    "formulas": "k=2a+h+2; d=3a+h^2; gamma=3a+3h; L=2a+3h; minimum maximizing slack=a",
+    "threshold_specializations": "h=a+3: gamma=T_B+1; h=a+4: gamma=T_A+1; first violating slack=a in each case",
+    "limitations": "Specified five-sets fail; another five-set has increment at most one. No counterexample to A/B, no reduction to 2-connected cores, no conflict with graph-dependent windows.",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_two_connected_slack.py tests/test_induction_slack_amplification.py tests/test_induction_cut_slack.py",
+      "tests_passed": 6,
+      "elapsed_seconds": 72.7,
+      "scope": "Exact shared-boundary and part-count tables for a=1,2,3 with h=a+3,a+4; graph connectivity after each vertex deletion; path parity tables; existing amplification and cut-slack regressions",
       "diff_check": "passed",
       "compute_job_finished": true
     }

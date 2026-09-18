@@ -1,3 +1,8 @@
+> **Subsequent result:** [INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md)
+> gives 2-connected critical examples with false positives at the actual
+> A/B thresholds for every universal constant slack cutoff. The earlier
+> formulas and the graph-dependent localization theorem remain valid.
+
 # Connected critical cores still require unbounded slack
 
 Date: 2026-09-18. **Single bottleneck:** does connectedness make optimal

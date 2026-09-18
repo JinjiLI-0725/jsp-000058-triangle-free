@@ -1,5 +1,18 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R8: a constant slack window decides A/B thresholds on 2-connected cores
+
+**FALSIFIED (2026-09-18).** The family F_(a,h) in
+[INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md)
+is triangle-free, 2-connected, edge-critical, and nonautomatic. For
+h=a+3 at B's threshold, or h=a+4 at A's threshold, its specified five-set
+has gamma=T+1, and the minimum slack of any threshold-violating cut is a.
+Taking a larger than any proposed constant produces a false positive.
+This strengthens R7 from incorrect exact evaluation below the threshold
+to incorrect threshold decisions, and removes the articulation vertex.
+It does not refute A/B: another five-set in the same graph has increment
+at most one. Graph-dependent slack windows remain valid.
+
 ## R7: connectedness repairs optimal-cut or constant-slack sufficiency
 
 **FALSIFIED (2026-09-18).** The symbolic connected, bridgeless critical

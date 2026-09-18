@@ -236,6 +236,15 @@ rules out that particular way of constructing another equality example.
 
 ## 7. Proposed structural lemmas (unproved)
 
+> **Latest progress (2026-09-18, threshold false positives):**
+> [INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md)
+> **FALSIFIES** universal constant slack tests even at the exact A/B
+> thresholds on 2-connected nonautomatic edge-critical cores. A symbolic
+> family has a specified five-set with gamma=T+1 whose first violating cut
+> has slack a, for arbitrarily large a. Other five-sets satisfy B; A/B remain
+> **CONJECTURAL**. The graph-dependent window remains valid. No balanced-
+> extension enumeration was repeated.
+
 > **Latest progress (2026-09-18, threshold slack localization):**
 > [INDUCTION_THRESHOLD_SLACK.md](INDUCTION_THRESHOLD_SLACK.md) proves that
 > a uniform extension budget U_X gives an exact threshold test using only

@@ -1,60 +1,74 @@
-# Induction checkpoint — 2026-09-18, threshold slack localization
+# Induction checkpoint — 2026-09-18, 2-connected threshold obstruction
 
 JSP-000058 and induction lemmas A/B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: how many full-cut slack layers must
-be controlled to certify a selected five-set at the A/B threshold?
-See [INDUCTION_THRESHOLD_SLACK.md](INDUCTION_THRESHOLD_SLACK.md).
+Exactly one bottleneck was addressed: whether 2-connectedness permits a
+universal constant slack window to certify a specified five-set at an
+A/B threshold. See
+[INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md).
 
 ## PROVED
 
-For h=e(G[X]) and z=e(X,G-X), the local integer budget
-U_X=min(floor((h+z)/2), d(G[X])+floor(z/2)) bounds the extension cost
-of EVERY remainder coloring. There is a full coloring attaining gamma
-with slack at most U_X-gamma. Consequently, for every integer T>=0,
+The symbolic family F_(a,h), a>=1 and h>=3, is triangle-free,
+2-connected and edge-critical. It joins J_a and B_h at two vertices of
+the independent deleted boundary and replaces one retained edge by a
+nine-edge path. For its specified five-set X,
 
-    gamma(X)<=T iff r_X(c)<=T+s(c) for all 0<=s(c)<=U_X-T-1.
+    k=2a+h+2, d=3a+h^2, gamma=3a+3h, L=2a+3h,
+    minimum slack of a coloring attaining gamma = a.
 
-The empty window is automatic. If L is the optimal-full-cut incident
-maximum, exact evaluation also needs only slack at most U_X-L.
-In particular, U_X<=T+1 and L<=T suffice. This improves the previous
-incident-edge cutoff without claiming a universal constant cutoff.
+All two-vertex boundary compatibility, critical-edge witnesses and
+subdivision effects are proved explicitly. With h=a+3, gamma=T_B+1;
+with h=a+4, gamma=T_A+1. Both specializations have d>=2k, and the first
+threshold-violating coloring has slack exactly a.
+
+## FALSIFIED
+
+Every proposed universal constant slack cutoff for deciding a specified
+five-set's A or B threshold, even on 2-connected nonautomatic critical
+cores. Choose a larger than the cutoff. Unlike earlier examples, these
+are false positives at the actual thresholds, not merely incorrect exact
+increments that still satisfy the threshold.
+
+This does NOT refute A/B: five consecutive internal vertices of the long
+path give a different set with increment at most one. It also does not
+refute the proved graph-dependent cutoff U_X-T-1.
 
 ## COMPUTATIONALLY VERIFIED
 
-Tests independently check the uniform extension budget for every remainder
-coloring, the maximizing-witness slack bound, and both directions of the
-threshold test for all integer T=0,...,U_X+1 on every five-set of four
-fixed order-10 graphs: Petersen, B_2, C5 plus five isolates, and K_(5,5).
-The known Petersen four-set slack-one obstruction is retained. Existing
-full-cut identity and critical Petersen/B_3 certificates also pass.
+Exact boundary tables check the symbolic formulas and threshold failures
+for a=1,2,3, with h=a+3 and a+4. They enumerate every Q coloring and every
+B_h part-count pattern, retaining shared vertex colors. Independent graph
+checks verify triangle-freeness and connectivity after every single-vertex
+deletion; a path truth table checks the subdivision inference. Existing
+amplification and full-cut regressions also pass.
 
 Validation: `.venv/bin/python -m pytest -q
- tests/test_induction_threshold_slack.py tests/test_induction_cut_slack.py`
-— **5 passed**, 82.99 seconds. These are bounded inference checks, not
+ tests/test_induction_two_connected_slack.py
+ tests/test_induction_slack_amplification.py tests/test_induction_cut_slack.py`
+— **6 passed**, 72.70 seconds. These bounded construction checks are not
 an exhaustive A/B verification. Process inspection before launch found
-no visible existing compute job. Only this test job was launched; it has
-finished. No random search or balanced-extension enumeration ran.
+no visible existing compute job. Only one test job ran; it finished.
+No broad random search or balanced-extension enumeration ran.
 
-## CONJECTURAL / exact next claim
+## CONJECTURAL / exact remaining claim
 
-A_window/B_window: on each nonautomatic critical core, select five vertices
-X passing its threshold test through slack U_X-T-1, with T=2k-1 for A
-or 2k-2 for nonbalanced B. These are equivalent to A/B by the proved
-localization and core-transfer results. The selection claim is unresolved;
-no fixed-width window is guaranteed, even for balanced transversals.
+A_window/B_window still require choosing five vertices X on each
+nonautomatic critical core so that all cuts through its graph-dependent
+slack window U_X-T-1 satisfy r_X<=T+s, where T=2k-1 for A and T=2k-2
+for nonbalanced B. These remain equivalent to A/B. The new obstruction
+shows that even threshold-only control cannot use a universal constant
+window for an arbitrary X; the selection of X must do real work.
+No reduction of A/B to 2-connected graphs is claimed.
 
-## FALSIFIED / retained limits
+## Coverage and clean stopping point
 
-The earlier optimal-cut-only and universal constant-slack shortcuts remain
-falsified, including on connected bridgeless critical cores. No new
-candidate was falsified this cycle. The new cutoff varies with X and G.
+All t=1,...,25 artifacts were read: complete=true and max_gap=0 throughout.
+They certify homogeneous extensions. Together with the arbitrary t>=26
+symbolic proof they do not establish an all-t arbitrary extension theorem.
+Subsequent symbolic notes reach t>=3; mixed t=2 remains unresolved. No
+balanced-extension result was used as a premise or recomputed.
 
-All t=1,...,25 artifacts were read and have complete=true, max_gap=0.
-Their homogeneous certification and the original arbitrary t>=26 proof
-do not establish an all-t arbitrary extension theorem. Later symbolic
-proofs cover t>=3; mixed t=2 remains unresolved. No extension theorem
-was used in this cycle. No potential complete proof appeared.
-
-Notes and state were updated; `git diff --check` passed. Unrelated
-existing overnight log changes were left untouched. This is a clean
-research checkpoint, not a claim that the working tree is otherwise clean.
+Notes and state were updated; `git diff --check` passed. Unrelated existing
+overnight log changes were left untouched. No potential complete proof
+appeared. This is a clean research checkpoint, not a claim that the entire
+working tree is clean.
