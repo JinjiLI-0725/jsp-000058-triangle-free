@@ -61,3 +61,35 @@ starting point, and preserve proof versus computation labels.
 
 This checkpoint will be finalized with the targeted literature findings,
 symbolic counterexamples to stronger rules, and bounded experiment results.
+
+## Update — completed finite balanced-extension verification
+
+The previous finite-status section is superseded by the following result.
+
+COMPUTATIONALLY VERIFIED:
+
+For every t = 1,...,25, the optimized exact checker completed the full
+enumeration.
+
+For each t:
+- 242,500 normalized configurations were checked;
+- 1,245,367 maximal neighborhood configurations were evaluated;
+- maximum gap d-(t+1)^2 was 0;
+- no counterexample was found.
+
+Final result files are stored at:
+
+results/balanced_extension/t1.json
+...
+results/balanced_extension/t25.json
+
+Therefore the finite t<=25 balanced-remainder gap is closed computationally.
+
+The next priority is NOT to repeat this enumeration.
+
+The remaining research task is to combine:
+1. the exhaustive t<=25 verification;
+2. the symbolic t>=26 argument;
+
+and then determine whether the resulting balanced-remainder theorem can
+advance induction lemmas A or B toward the full JSP-000058 conjecture.
