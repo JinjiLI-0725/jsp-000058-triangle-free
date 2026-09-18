@@ -1,88 +1,78 @@
-# Induction checkpoint — 2026-09-18, exact path-based selection
+# Induction checkpoint — 2026-09-18, pendant five-set selection
 
 JSP-000058 and general induction lemmas A/B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: selecting five vertices in a critical
-core with a rigorous bound on the reoptimized increment, restricted in this
-cycle to degree-two path interiors, cycle components, and isolates.
-See [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md).
+Exactly one bottleneck was addressed: selecting five vertices while
+controlling q+e in critical cores, this cycle through pieces attached at
+one retained vertex. See [INDUCTION_PENDANT_SELECTION.md](INDUCTION_PENDANT_SELECTION.md).
 
 ## PROVED
 
-Compress maximal degree-two paths to signed parity constraints K, retaining
-loops and parallel constraints. If o counts odd cycle components, then
+Using the existing one-vertex gluing identity, deletion increments localize
+exactly to pendant interiors and add across disjoint such interiors.
+For a balanced block B_s, s>=2, avoiding any one prescribed root, the
+minimum increment for deleting j=0,...,5 vertices is respectively
 
-    d(C)=D(K)+o.
+    0, s, s, 2s-1, 2s-1, 2s-1.
 
-For a deletion X confined to path interiors, cycle components and isolates,
-let S be the hit paths and j the number of hit odd cycle components. Then
+For C5 the private capacity is four, each nonempty deletion costing one.
+A proper pendant B_s with s>=2 supplies a five-set at cost
+2s-1<=2k-3, hence satisfying B. The construction has a remainder-optimal
+coloring with q=0. This handles vertices of arbitrarily large degree.
 
-    gamma_C(X)=D(K)-D(K-S)+j.
-
-Any nonempty interior deletion on one path of an edge-critical core has
-increment exactly one, regardless of the number or spacing of deleted
-vertices. Deleting interiors from two paths with the same endpoints and
-opposite length parity also has loss exactly one, without criticality.
-The two paths must both be hit; total interior capacity at least five
-then suffices to select five vertices. A general capacity criterion gives
-explicit five-set witnesses with loss at most the maximum selected
-constraint cost plus j. The proof constructs an optimal remainder cut
-with q=0, allowing proper recoloring of surviving path fragments.
-
-A/B reduce further to critical cores with no such capacity witness.
-This does not resolve higher-degree selection. For k>=4 the OLD sequential
-degree bound already excludes cores with five vertices of degree at most
-three; the present work does not claim this observation as a new theorem
-or remove the remaining low-degree vertices from the original order.
-
-The nine-edge path in the previous F_(a,h) obstruction supplies five-sets
-of increment exactly one. Thus those arbitrary-set threshold failures
-still do not refute existential A/B.
+A/B hold for critical cores whose nontrivial blocks are balanced C5
+blow-ups or odd cycles, with B's usual balanced exception. The proof
+uses a large leaf block, two C5 leaf blocks, or a single-block component.
+It never discards vertex counts or assumes a conjectural bound on an
+arbitrary block. The equal-d spanning-core transfer gives the same
+five-set upper bound in the original graph.
 
 ## FALSIFIED
 
-Additivity of losses from distinct critical paths. Two terminals joined
-by two length-two and two length-three paths give d=2 and are edge-critical.
-Hitting one path of each parity loses one in total, although each alone
-loses one. Hitting two even paths loses two. The exact signed optimization
-cannot be replaced by adding individual critical-edge losses.
+Unconditional extension of additive gluing to two shared boundary vertices:
+a length-two path and a length-three path are each bipartite, but their
+union along both endpoints is C5. This is an inference safeguard, not a
+counterexample to A/B. Single-root gluing was already proved in earlier
+notes; the new progress is the rooted profile and five-set selection.
 
 ## COMPUTATIONALLY VERIFIED
 
-Independent full cut enumeration checks the signed formulas on every
-interior/cycle/isolate deletion subset of five fixed decompositions,
-1536 subsets in total. Fixtures include parallel paths of both parities,
-rooted odd/even loops, odd/even cycle components, and subdivided K4.
-Every original edge deletion is compared with the compressed prediction.
-Separate tests check five separated interior deletions on a critical
-length-ten path, opposite-parity five-set witnesses, and prescribed
-monochromatic edge positions. Existing core-transfer regressions pass.
+Full cut enumeration checks 398 root-avoiding subsets of B_1/B_2, every
+local increment for B_2 glued to C5 or K2,3 (764 cases), simultaneous
+private deletions in two C5 pieces, and a B_3 transversal. A nonautomatic
+order-20 example (two B_2 blocks sharing a root plus one isolate) has
+only one vertex of degree at most three, d=8, gamma=3, and an explicitly
+checked q=0, e=3 coloring.
 
-Validation: `.venv/bin/python -m pytest -q
- tests/test_induction_thread_selection.py tests/test_induction_critical_core.py`
-— **8 passed**, 17.90 seconds. An initial expected subset-count assertion
-was corrected from 1920 to 1536; mathematical assertions had passed.
-These are bounded inference checks, not exhaustive general A/B evidence.
+Validation ran sequentially:
 
-## CONJECTURAL / remaining claim
+- `.venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py tests/test_induction_critical_core.py`
+  — 7 passed, 22.42 seconds.
+- After adding the high-degree/q=0 check:
+  `.venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py`
+  — 4 passed, 11.61 seconds.
+
+Together these cover eight distinct tests; the three initial new tests
+were rerun with the added fourth test. These are bounded inference checks,
+not exhaustive general A/B evidence. `git diff --check` passed.
+
+## CONJECTURAL / remaining bottleneck
 
 Select five vertices with q+e<=2k-1 (A), or <=2k-2 in the nonbalanced case
-(B), on nonautomatic edge-critical cores without a path-capacity witness.
-For k>=4 these cores have at most four vertices of degree at most three;
-selection involving higher-degree vertices remains the substantive gap.
-No minimum-degree-four reduction, 2-connected reduction, or general
-optimal-cut sufficiency is claimed. No potential complete proof appeared.
+(B), on residual nonautomatic critical cores lacking the automatic,
+path-capacity, and pendant witnesses. Arbitrary leaf blocks and
+2-connected higher-degree cores remain unresolved. No general reduction
+to 2-connected cores or minimum degree four is claimed.
 
-## Coverage and clean stopping point
+## Coverage and stopping point
 
 All t=1,...,25 saved artifacts were read: complete=true and max_gap=0.
-Their homogeneous-neighborhood scope and the arbitrary t>=26 symbolic
-proof do not alone establish an arbitrary all-t theorem. Subsequent
-symbolic notes reach t>=3; mixed t=2 remains unresolved. The present
-proof uses no balanced-extension result as a premise. No enumeration
-was repeated and no random search was run.
+Their homogeneous scope and the arbitrary t>=26 symbolic proof do not
+alone establish the arbitrary all-t result; subsequent symbolic notes
+reach t>=3, leaving mixed t=2 unresolved. No balanced-extension theorem
+was used as a premise. The t=5 empty witness does not classify equality.
+No enumeration was repeated and no random search was run.
 
-Process inspection before each test launch found no existing compute job;
-the two test jobs ran sequentially and finished. Notes and state were
-updated; `git diff --check` passed. Unrelated overnight logs were left
-untouched. This is a clean research checkpoint, not a claim that the
-entire working tree is clean.
+Process inspection before each test launch found no existing compute job.
+Both test jobs finished. Notes and state were updated. Unrelated overnight
+logs were left untouched. No potential complete solution appeared.
+This is a clean research checkpoint, not an entirely clean working tree.

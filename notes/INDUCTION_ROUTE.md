@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, pendant five-set selection):**
+> [INDUCTION_PENDANT_SELECTION.md](INDUCTION_PENDANT_SELECTION.md) **PROVES**
+> exact root-avoiding deletion profiles for balanced blocks and constructs
+> B witnesses in proper pendant B_s pieces (s>=2), at cost 2s-1<=2k-3.
+> A/B also hold for critical cores whose nontrivial blocks are balanced
+> C5 blow-ups or odd cycles. This includes nonautomatic higher-degree
+> examples. Arbitrary leaf blocks and 2-connected cores remain unresolved;
+> no general reduction to 2-connected cores is claimed.
+
 > **Latest progress (2026-09-18, path-based five-set selection):**
 > [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md) **PROVES**
 > an exact signed-path formula for deletions confined to degree-two interiors.

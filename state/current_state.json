@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_thread_selection_reduction_proved",
+  "status": "induction_pendant_selection_proved",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: select five vertices in critical cores while controlling q+e; exact degree-two path compression and capacity witnesses now proved",
-  "next_goal": "Prove A_crit/B_crit selection on cores without a path-capacity witness; for k>=4 unresolved cores have at most four vertices of degree at most three, so higher-degree vertex selection remains essential",
+  "current_strategy": "Single bottleneck: five-set q+e selection in critical cores; exact root-avoiding balanced-block profiles and pendant witnesses proved",
+  "next_goal": "Select five vertices in residual nonautomatic critical cores without automatic, path-capacity, or pendant witnesses; arbitrary leaf blocks and 2-connected higher-degree cores remain unresolved",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -348,6 +348,38 @@
       "initial_test_correction": "Expected subset count corrected from 1920 to 1536; mathematical assertions passed on the initial run",
       "diff_check": "passed",
       "compute_job_finished": true
+    }
+  },
+  "induction_pendant_selection": {
+    "note": "notes/INDUCTION_PENDANT_SELECTION.md",
+    "profile_status": "PROVED",
+    "profile": "For s>=2 and j=0,...,5: f_s(j)=(0,s,s,2s-1,2s-1,2s-1), avoiding one prescribed root",
+    "pendant_selection_status": "PROVED: proper pendant B_s, s>=2, supplies gamma=2s-1<=2k-3",
+    "block_family_status": "PROVED: A/B for critical cores whose nontrivial blocks are balanced C5 blow-ups or odd cycles, with usual balanced exception for B",
+    "limitations": "No reduction to 2-connected cores; arbitrary leaf blocks remain. Multiple attachment vertices are not covered.",
+    "two_boundary_additivity": "FALSIFIED by paths of lengths two and three forming C5",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "runs": [
+        {
+          "command": ".venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py tests/test_induction_critical_core.py",
+          "tests_passed": 7,
+          "elapsed_seconds": 22.42
+        },
+        {
+          "command": ".venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py",
+          "tests_passed": 4,
+          "elapsed_seconds": 11.61
+        }
+      ],
+      "distinct_tests_passed": 8,
+      "scope": "398 rooted B1/B2 deletion subsets; 764 one-root gluing checks; two-piece allocation; B3 transversal; order-20 nonautomatic higher-degree core with explicit q=0/e=3; existing core-transfer regressions",
+      "diff_check": "passed",
+      "compute_jobs_finished": true
     }
   }
 }
