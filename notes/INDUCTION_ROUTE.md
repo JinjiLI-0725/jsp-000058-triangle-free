@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, threshold slack localization):**
+> [INDUCTION_THRESHOLD_SLACK.md](INDUCTION_THRESHOLD_SLACK.md) proves that
+> a uniform extension budget U_X gives an exact threshold test using only
+> cuts with slack at most U_X-T-1. Here
+> U_X=min(floor((h+z)/2), d(G[X])+floor(z/2)). This improves the earlier
+> incident-edge cutoff; it does not give a constant cutoff or select X.
+> A_window/B_window remain **CONJECTURAL**, equivalent to A/B on critical
+> cores. No balanced-extension enumeration was repeated.
+
 > **Latest progress (2026-09-18, connected slack obstruction):**
 > [INDUCTION_CONNECTED_SLACK.md](INDUCTION_CONNECTED_SLACK.md) proves that
 > even connected, bridgeless, nonautomatic edge-critical cores can require

@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_connected_slack_shortcut_falsified",
+  "status": "induction_threshold_slack_localization_proved",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: connectedness as a repair for full-cut slack truncation; symbolic connected critical family falsifies this repair",
-  "next_goal": "Select a five-set controlling all cut slack on nonautomatic critical cores; connectedness and absence of bridges alone do not justify truncation",
+  "current_strategy": "Single bottleneck: rigorously localize the slack layers needed to certify a selected five-set at the A/B threshold",
+  "next_goal": "Prove A_window/B_window: select five vertices on each nonautomatic critical core controlling cuts through slack U_X-T-1",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -279,6 +279,28 @@
       "finite_gluing_instance_nonautomatic": false,
       "diff_check": "passed",
       "final_process_check": "No running compute job"
+    }
+  },
+  "induction_threshold_slack": {
+    "note": "notes/INDUCTION_THRESHOLD_SLACK.md",
+    "status": "PROVED",
+    "uniform_budget": "U_X=min(floor((h+z)/2),d(G[X])+floor(z/2))",
+    "threshold_rule": "gamma(X)<=T iff r_X(c)<=T+s(c) for all cuts with 0<=s(c)<=U_X-T-1",
+    "maximizing_witness_slack_bound": "U_X-gamma(X)",
+    "limitations": "No five-set selection theorem or constant-width window; A_window/B_window equivalent to A/B, not established",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "new_falsification": false,
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_threshold_slack.py tests/test_induction_cut_slack.py",
+      "tests_passed": 5,
+      "elapsed_seconds": 82.99,
+      "scope": "Every five-set of four fixed order-10 graphs, every remainder coloring and integer threshold 0 through U+1; known positive-slack obstruction and existing full-cut regressions",
+      "diff_check": "passed",
+      "compute_job_finished": true
     }
   }
 }
