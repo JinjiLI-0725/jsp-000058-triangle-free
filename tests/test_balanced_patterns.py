@@ -153,3 +153,67 @@ def test_t7_exceptional_types_force_unbalanced_compatible_containment():
             assert max(sizes) >= 10
             assert min(sizes[j] * sizes[(j + 1) % 5] for j in range(5)) <= 63
         assert exceptions == expected
+
+
+def test_t6_exceptions_admit_bounded_repair_for_all_mixed_patterns():
+    """Audit repaired blow-up bounds under the exact global loss budget.
+
+    Enumerate only three internal shapes and type maps. A small knapsack
+    bounds every assignment of 30 individual patterns, including mixed and
+    nonmaximal patterns. No full extension enumeration or MaxCut search.
+    """
+    cycle = tuple((i, (i + 1) % 5) for i in range(5))
+    cuts = [c for c in product(range(2), repeat=5) if c[0] == 0
+            and sum(c[u] == c[v] for u, v in cycle) == 1]
+    shapes = (
+        tuple((0, v) for v in range(1, 5)),
+        ((0, 2), (0, 3), (0, 4), (1, 2), (1, 3)),
+        tuple((u, v) for u in (0, 1) for v in (2, 3, 4)),
+    )
+    for edges in shapes:
+        compatible = [new for new in product(range(5), repeat=5)
+                      if all((new[u] - new[v]) % 5 in (1, 4) for u, v in edges)]
+        exceptions = 0
+        for tail in product(range(5), repeat=4):
+            types = (0,) + tail
+            supports = [sum(1 << v for v in range(5)
+                            if (types[v] - j) % 5 in (1, 4)) for j in range(5)]
+            patterns = [[i for i in range(32) if not i & ~support
+                         and all(not (i >> u & 1 and i >> v & 1)
+                                 for u, v in edges)] for support in supports]
+            alpha = [max(i.bit_count() for i in part) for part in patterns]
+            cover_sum = 10 - sum(alpha)
+            weight = sum(c[types[u]] == c[types[v]] for c in cuts for u, v in edges)
+            budget = weight - 6 * cover_sum - 5
+            if cover_sum == 0 or budget < 0:
+                continue
+            exceptions += 1
+            assert budget <= (3 if len(edges) == 4 else len(edges) - 5)
+            certified = False
+            for new in compatible:
+                sizes = [6 + new.count(j) for j in range(5)]
+                blowup_bound = min(sizes[j] * sizes[(j + 1) % 5] for j in range(5))
+                # The proof supplies a cut of cost 36 before repair.
+                if blowup_bound != 36:
+                    continue
+                dp = {0: 0}
+                for j, part in enumerate(patterns):
+                    allowed = sum(1 << v for v in range(5)
+                                  if (new[v] - j) % 5 in (1, 4))
+                    options = {(alpha[j] - i.bit_count(), (i & ~allowed).bit_count())
+                               for i in part if alpha[j] - i.bit_count() <= budget}
+                    for _ in range(6):
+                        updated = {}
+                        for spent, removed in dp.items():
+                            for loss, extra in options:
+                                if spent + loss <= budget:
+                                    key = spent + loss
+                                    updated[key] = max(updated.get(key, -1), removed + extra)
+                        dp = updated
+                assert dp
+                repair_bound = 1 if len(edges) == 4 else 2 * (len(edges) - 5)
+                if max(dp.values()) <= repair_bound:
+                    certified = True
+                    break
+            assert certified, (edges, types, cover_sum, weight, budget)
+        assert exceptions > 0

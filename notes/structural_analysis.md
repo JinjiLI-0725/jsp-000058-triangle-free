@@ -236,6 +236,11 @@ rules out that particular way of constructing another equality example.
 
 ## 7. Proposed structural lemmas (unproved)
 
+Current partial progress: [BALANCED_EXTENSION_T6.md](BALANCED_EXTENSION_T6.md)
+proves that for k>=7, any five-set leaving B_(k-1) satisfies A, and also
+B when G is nonbalanced. This does not select a suitable set in an arbitrary
+graph. The general q+e obstruction remains as stated in INDUCTION_ROUTE.md.
+
 These are precise induction targets. Their computational tests are reported
 in section 8; passing those tests is not a proof. Neither is used to assume
 the conjecture in the computations.

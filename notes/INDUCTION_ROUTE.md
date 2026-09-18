@@ -1,3 +1,11 @@
+> **Latest progress (2026-09-18, t=6 repair):**
+> [BALANCED_EXTENSION_T6.md](BALANCED_EXTENSION_T6.md) proves the strict
+> arbitrary balanced-extension theorem for **t>=6**. Mixed t=2,...,5
+> remain unresolved. For B_inherit, A plus equality uniqueness through
+> k=6 now suffices. General A/B and the exact q+e obstruction remain open.
+> Earlier thresholds and incomplete-run reports below are historical;
+> all homogeneous t=1,...,25 certificates are complete with max_gap=0.
+
 > **Latest progress (2026-09-18):**
 > [BALANCED_EXTENSION_T7.md](BALANCED_EXTENSION_T7.md) proves the arbitrary
 > strict balanced-extension theorem for **t>=7**. The mixed range still
