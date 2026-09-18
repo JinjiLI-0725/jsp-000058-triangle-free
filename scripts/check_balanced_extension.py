@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""Exhaustive finite check for five-vertex extensions of B_t.
+"""Exhaustive finite check for HOMOGENEOUS five-vertex extensions of B_t.
 
-The reduction is exact for an upper-bound search: in each B_t part, all t
-vertices have the same neighborhood in X after replacing that neighborhood by
-an inclusion-maximal independent set of X. Any original extension is a
-spanning subgraph of one such maximal extension, and d is monotone under edge
-addition. A maximum cut of the maximal extension has a part-respecting form
-by the standard twin-part rounding argument. Thus the ten-bit cut enumeration
-computes its exact d.
+WARNING: this does not enumerate mixed neighborhoods within remainder parts.
+The former assertion that every extension is a spanning subgraph of one of
+these homogeneous extensions is false; see notes/BALANCED_EXTENSION_AUDIT.md.
+Twin-part rounding correctly computes d for the enumerated family only.
 """
 from itertools import combinations, product
 import json

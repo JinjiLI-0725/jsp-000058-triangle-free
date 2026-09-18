@@ -1,5 +1,19 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R4: every balanced-remainder extension has a homogeneous supergraph
+
+**FALSIFIED (2026-09-18).** Let H=B_2, add five vertices whose sole internal
+edge is xy, and attach x and y to distinct vertices a,b in the same H part.
+The graph is triangle-free. Any common X-neighborhood for a,b that contains
+both original neighborhoods contains x,y and creates a triangle with xy.
+Thus the claimed fixed-part homogeneous spanning-supergraph reduction fails.
+The completed t=1,...,25 enumerations remain valid for their homogeneous
+family. This is not a falsification of the bound, A, B, or a possible separate
+numerical domination theorem. Full proof and corrected representation:
+[BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md).
+
+## Earlier rejections
+
 The following are concrete counterexamples to overly strong structural guesses,
 not counterexamples to JSP-000058. Every example has 15 vertices and was checked
 for triangles and evaluated with both exact MaxCut implementations.

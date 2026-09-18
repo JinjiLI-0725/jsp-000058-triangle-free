@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+// Coverage: homogeneous neighborhoods within each B_t part only.
+// Mixed extensions need a separate argument: notes/BALANCED_EXTENSION_AUDIT.md.
 using namespace std;
 struct State{long long configs=0,choices=0,maxgap=LLONG_MIN,bestd=0;string wit;};
 string quote(const string&s){string r="\"";for(char c:s){if(c=='\"'||c=='\\')r+='\\';r+=c;}return r+"\"";}

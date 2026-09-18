@@ -1,5 +1,15 @@
 # The two induction routes for JSP-000058
 
+> **Current coverage correction (2026-09-18):** read
+> [BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md). All saved
+> t=1,...,25 runs are complete with max_gap=0; historical incomplete-run
+> statements below are superseded. However, those runs enumerate homogeneous
+> neighborhoods within remainder parts. The claimed spanning-supergraph
+> reduction for arbitrary mixed neighborhoods is **FALSIFIED**. The symbolic
+> t>=26 theorem remains valid; the all-t extension theorem does not yet follow.
+> The corrected exact mixed-pattern formula and the single current bottleneck
+> are in the audit. General A and B remain conjectural.
+
 Date: 2026-09-18. Scope: only A and B from `structural_analysis.md`,
 Section 7. Neither general lemma has been proved or refuted here.
 Computational evidence is not proof. Statements marked **Proved** have
@@ -508,7 +518,10 @@ triangle-free graphs F on X={0,...,4}, all 625 type maps with f(0)=0
 I_j in each allowed type support S_j. For a fixed choice, the exact forced
 deficit is
 
-`D=Σ_j(2t-|I_j|)=10t-Σ_j|I_j|`.
+`D=t Σ_j(2-|I_j|)=10t-t Σ_j|I_j|`.
+
+This corrected formula is for homogeneous patterns I_j, each repeated t
+times. The previous displayed formula omitted their multiplicity t.
 
 An internal edge xy forces x and y to have disjoint neighborhoods in every
 common remainder part. Therefore the exact minimum possible deficit over

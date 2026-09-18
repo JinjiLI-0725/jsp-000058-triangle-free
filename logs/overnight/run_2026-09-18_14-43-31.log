@@ -3718,3 +3718,7 @@ def test_rejected_structural_claim_witnesses():
 /tmp/nauty2_9_3.tar.gz
 
 Codex exit code: 101
+[main ce94f38] Automated research checkpoint 2026-09-18_14-43-31
+ 2 files changed, 3815 insertions(+), 79 deletions(-)
+ create mode 100644 logs/overnight/run_2026-09-18_14-43-31.log
+ rewrite overnight_research.sh (80%)
