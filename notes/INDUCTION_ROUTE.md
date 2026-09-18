@@ -496,3 +496,68 @@ This is useful because it targets the remaining strict transition in
 B_inherit; it does not claim to resolve A. No large new computation has
 been started. The two general missing steps remain those explicitly
 identified following (1).
+
+## Bounded balanced-remainder verification status (2026-09-18)
+
+**COMPUTATIONALLY VERIFIED (reduction, not the final inequality).** The
+finite check is implemented in
+`scripts/check_balanced_extension.py` and the optimized companion
+`scripts/check_balanced_extension.cpp`. It enumerates all 388 labeled
+triangle-free graphs F on X={0,...,4}, all 625 type maps with f(0)=0
+(rotation normalization), and all inclusion-maximal independent choices
+I_j in each allowed type support S_j. For a fixed choice, the exact forced
+deficit is
+
+`D=Σ_j(2t-|I_j|)=10t-Σ_j|I_j|`.
+
+An internal edge xy forces x and y to have disjoint neighborhoods in every
+common remainder part. Therefore the exact minimum possible deficit over
+all neighborhood subsets with the given (F,f) is
+
+`D_min=t(10-Σ_j α(F[S_j]))`,
+
+where S_j={x:f(x)=j−1 or j+1} and α is independence number. This identity
+is proved by assigning each of the t vertices in A_j to an independent set
+of F[S_j], independently for each j. The earlier 388×625 diagnostic
+computed this quantity and the internal-edge monochromatic weights; its
+largest W values by L=10−Σα were
+`L=1:12, 2:20, 3:24, 4:30, 5:21, 6:25`.
+
+**COMPUTATIONALLY ATTEMPTED, NOT CERTIFIED.** The exact maximal-extension
+run was started for every t=1,...,25. It was stopped before completion
+because the Cartesian product of maximal independent-set choices and ten-bit
+cut evaluations was too large for this session. No output was accepted as
+evidence, and no t-specific pass/fail conclusion was drawn. In particular,
+there is currently no explicit counterexample configuration for any t, and
+there is no exhaustive finite proof for t<=25.
+
+**CONJECTURAL.** The desired balanced-remainder statement remains:
+for every 1<=t<=25, every triangle-free extension G of B_t by five
+vertices satisfies d(G)<= (t+1)^2, with equality only for B_(t+1).
+The t>=26 theorem earlier in this file is proved. Consequently the combined
+all-t theorem has not been established: only the range t>=26 is proved.
+
+### Optimized exact runs (2026-09-18)
+
+**COMPUTATIONALLY VERIFIED.** The optimized C++ enumerator
+`scripts/check_balanced_extension.cpp` keeps the same exhaustive search
+space. For each cut it precomputes a cost polynomial `c0+c1*t+c2*t^2`,
+uses 512 cuts modulo complementation, and checkpoints after every 1000
+configurations. Per-t artifacts are in `results/balanced_extension/t1.json`
+through `t4.json`; resumable partial state uses the corresponding
+`tN.checkpoint.json` files. Each completed run examined all 388 triangle-free
+F, all 625 normalized type maps, and 1,245,367 maximal-neighborhood choices.
+
+| t | configurations | maximal choices | max d-(t+1)^2 | result |
+|---|---:|---:|---:|---|
+| 1 | 242,500 | 1,245,367 | 0 | holds |
+| 2 | 242,500 | 1,245,367 | 0 | holds |
+| 3 | 242,500 | 1,245,367 | 0 | holds |
+| 4 | 242,500 | 1,245,367 | 0 | holds |
+
+The witness saved in each file attains equality and is a balanced C5 blow-up
+extension; it is a maximizing witness, not a counterexample. No t-specific
+counterexample was found for t<=4. The remaining t=5,...,25 runs have the
+same exact search size and measured runtime about two minutes per t on this
+environment (approximately 38--45 minutes total). They were not started in
+this window, so t<=25 is not fully computationally verified.

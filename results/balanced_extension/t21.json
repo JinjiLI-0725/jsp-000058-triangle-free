@@ -1,0 +1,11 @@
+{
+  "t": 21,
+  "next_configuration": 242500,
+  "triangle_free_graphs": 388,
+  "configurations_checked": 242500,
+  "maximal_neighborhood_configurations_checked": 1245367,
+  "max_gap": 0,
+  "best_d": 484,
+  "complete": true,
+  "witness": "E=03,04,12,14,23, f=02341 I=24,3,20,10,5,"
+}
