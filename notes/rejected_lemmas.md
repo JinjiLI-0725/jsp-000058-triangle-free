@@ -1,5 +1,16 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R7: connectedness repairs optimal-cut or constant-slack sufficiency
+
+**FALSIFIED (2026-09-18).** The symbolic connected, bridgeless critical
+family K_a in [INDUCTION_CONNECTED_SLACK.md](INDUCTION_CONNECTED_SLACK.md)
+has a five-set with gamma=3a+1, optimal-cut maximum 2a+1, and minimum
+maximizing slack a, for every a>=1. All members lie in the nonautomatic
+A/B domain. This strengthens the earlier disconnected examples and the
+[slack amplification result](INDUCTION_SLACK_AMPLIFICATION.md).
+It does not refute A/B or a claim about specially selected five-sets;
+these graphs have a cut vertex, so 2-connected restrictions are untested.
+
 ## R6: optimal full-graph cuts determine every critical-core deletion increment
 
 **FALSIFIED (2026-09-18).** On G_s=Petersen disjoint-union B_s, s>=3,

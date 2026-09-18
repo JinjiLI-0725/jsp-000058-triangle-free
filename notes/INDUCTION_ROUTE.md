@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, connected slack obstruction):**
+> [INDUCTION_CONNECTED_SLACK.md](INDUCTION_CONNECTED_SLACK.md) proves that
+> even connected, bridgeless, nonautomatic edge-critical cores can require
+> arbitrarily large slack to attain a specified five-deletion increment.
+> The one-vertex union of J_a, B_(2a+3), and C13 has gamma=3a+1,
+> optimal-cut maximum 2a+1, and minimum maximizing slack a.
+> **FALSIFIED:** connected versions of optimal-cut sufficiency and universal
+> constant slack truncation. A/B remain **CONJECTURAL**; these sets satisfy B.
+
 > **Latest progress (2026-09-18, full-cut slack):**
 > [INDUCTION_CUT_SLACK.md](INDUCTION_CUT_SLACK.md) proves the exact identity
 > gamma(X)=max_c(r_X(c)-s(c)). **FALSIFIED:** restricting this maximum to

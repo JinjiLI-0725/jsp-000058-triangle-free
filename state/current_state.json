@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_optimal_cut_shortcut_falsified",
+  "status": "induction_connected_slack_shortcut_falsified",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: optimal-full-cut sufficiency for critical-core deletion increments; exact full-cut slack identity proved and shortcut falsified",
-  "next_goal": "Select a five-set on nonautomatic critical cores while controlling positive-slack cuts: max_c(r_X(c)-s(c)) <= 2k-1 (A) or 2k-2 (B); optimal-cut edge coverage is insufficient",
+  "current_strategy": "Single bottleneck: connectedness as a repair for full-cut slack truncation; symbolic connected critical family falsifies this repair",
+  "next_goal": "Select a five-set controlling all cut slack on nonautomatic critical cores; connectedness and absence of bridges alone do not justify truncation",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -256,6 +256,29 @@
       "elapsed_seconds": 40.8,
       "scope": "512 Petersen cuts, all 638 deletions of size at most five, slack-one witness, B_3 component certificate; existing core and balanced-pattern regressions",
       "diff_check": "passed"
+    }
+  },
+  "induction_connected_slack": {
+    "note": "notes/INDUCTION_CONNECTED_SLACK.md",
+    "gluing_lemma_status": "PROVED",
+    "connected_optimal_cut_sufficiency": "FALSIFIED",
+    "connected_constant_slack_cutoff": "FALSIFIED",
+    "family": "K_a = one-vertex union of J_a, B_(2a+3), C13; a>=1",
+    "formulas": "k=4a+6; d=4a^2+15a+10; gamma=3a+1; L=2a+1; minimum maximizing slack=a",
+    "limitations": "Specified five-sets satisfy B; graphs have a cut vertex; no reduction to 2-connected cores proved",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_connected_slack.py tests/test_induction_slack_amplification.py tests/test_induction_cut_slack.py tests/test_induction_critical_core.py",
+      "tests_passed": 9,
+      "elapsed_seconds": 59.59,
+      "scope": "Rooted block-cut gluing tables and graph structure; existing amplified-boundary, cut-slack and critical-core regressions",
+      "finite_gluing_instance_nonautomatic": false,
+      "diff_check": "passed",
+      "final_process_check": "No running compute job"
     }
   }
 }

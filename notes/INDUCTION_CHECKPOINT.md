@@ -1,72 +1,58 @@
-# Induction checkpoint — 2026-09-18, full-cut slack obstruction
+# Induction checkpoint — 2026-09-18, connected slack obstruction
 
-JSP-000058 and general induction lemmas A and B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: whether the optimal full-graph cuts
-of an edge-critical core suffice to determine five-vertex deletion cost.
-The answer is no. See [INDUCTION_CUT_SLACK.md](INDUCTION_CUT_SLACK.md).
+JSP-000058 and induction lemmas A/B remain **CONJECTURAL**.
+Exactly one bottleneck was addressed: whether connectedness repairs the
+optimal-full-cut or fixed-slack truncation shortcut on critical cores.
+See [INDUCTION_CONNECTED_SLACK.md](INDUCTION_CONNECTED_SLACK.md).
 
-## Genuine progress — PROVED
+## PROVED / FALSIFIED
 
-For any graph and any vertex set X,
+One-vertex gluing preserves additivity of d, deletion increments (when
+the shared vertex is retained), and optimal-cut incident maxima. It also
+preserves edge-criticality and permits exact accounting of the minimum
+slack needed by a cut optimal on the remainder.
 
-    gamma_G(X)=max_c(r_X(c)-s(c)),
+The connected, bridgeless family K_a glues J_a, B_(2a+3), and C13 at a
+private vertex outside the deleted five-set. For all a>=1 it has
+k=4a+6, d=4a^2+15a+10>=2k, gamma=3a+1, optimal-cut incident maximum
+2a+1, and minimum maximizing slack a. Thus connected optimal-cut
+sufficiency and connected universal constant-slack truncation are
+**FALSIFIED**, even in the nonautomatic A/B domain.
 
-where r_X(c) counts monochromatic edges incident with X, once each, and
-s(c)=b_G(c)-d(G). Equality with the maximum restricted to optimal cuts
-holds exactly when some optimal full-graph cut restricts optimally to G-X.
-This is an exact reformulation of the existing q+e obstruction, not a
-solution of it. A slack cutoff excluding cuts that cannot beat the
-optimal-cut lower bound is also proved in the note.
-
-## Candidate O — FALSIFIED
-
-Let G_s be Petersen disjoint-union B_s, s>=3. Delete the four Petersen
-vertices {0,1,3,8} in the note's explicit labeling and one B_s vertex.
-The true increment is s+3, but the maximum incident monochromatic count
-over optimal cuts is s+2. A cut of slack one realizes the missing unit.
-The note proves the complete optimal-cut classification of Petersen
-combinatorially, and proves this infinite family is triangle-free,
-edge-critical, and in the nonautomatic domain of both A_crit and B_crit.
-
-This refutes the proposed optimal-full-cut-only equality. It does not
-refute A/B: the displayed five-set satisfies B. It does not rule out a
-special choice of X admitting compatible optima, or a connected-core
-version of the rejected claim. No complete solution appeared.
+This strengthens the existing
+[slack amplification result](INDUCTION_SLACK_AMPLIFICATION.md), which
+was present in the repository but absent from the preceding checkpoint.
+No A/B counterexample is produced: the exhibited X satisfies B. The
+family has a cut vertex, and no restriction to 2-connected cores is proved.
 
 ## COMPUTATIONALLY VERIFIED
 
-Independent enumeration of the 512 Petersen cuts checks its five optimal
-monochromatic triples, criticality and the slack-one witness. On all 638
-vertex sets of size at most five, the new identity, compatibility criterion
-and slack cutoff agree with independently optimized Gray-code remainder
-cuts. Separate B_3 cut enumeration validates the order-25 component
-certificate; no full order-25 cut enumeration is needed or claimed.
+Exact rooted cut tables of Q, C13, and B_3 validate the gluing identities
+on their connected union: d=13, gamma=4, optimal-cut maximum=3, minimum
+maximizing slack=1. This small validation instance is outside the
+nonautomatic domain; the infinite-family proof establishes that domain.
+Existing tests check the amplified boundary gadget at a=1,2,3,5.
 
-All completed t=1,...,25 artifacts were read, with complete=true and
-max_gap=0. The saved runs certify homogeneous patterns. Together with
-the original arbitrary t>=26 theorem they do not prove the all-t arbitrary
-extension theorem. Later symbolic proofs cover arbitrary t>=3; mixed t=2
-remains **CONJECTURAL**. This cycle uses none of these extension results
-as a premise. No extension enumeration was repeated; result files,
-including the t=5 empty witness, were left unchanged.
+All t=1,...,25 result artifacts were read and have complete=true,
+max_gap=0. Their homogeneous scope does not combine with the original
+arbitrary t>=26 proof to yield an all-t arbitrary extension theorem.
+Later proofs cover arbitrary t>=3; mixed t=2 remains **CONJECTURAL**.
+No balanced-extension result was used and no enumeration was repeated.
 
-## Exact next claim and clean stopping point
+## Exact next claim and clean checkpoint
 
-The single remaining target is to choose X on a nonautomatic critical
-core such that r_X(c)<=T+s(c) for every coloring c, with T=2k-1 for A,
-or T=2k-2 for nonbalanced B. Edgewise optimal-cut coverage cannot justify
-ignoring positive-slack colorings. Any further argument using this family
-of cuts must control those layers or prove an additional compatibility
-condition. This target remains **CONJECTURAL**.
+**CONJECTURAL:** choose five vertices X on a nonautomatic critical core
+so that r_X(c)<=T+s(c) for every coloring c, where T=2k-1 for A or
+2k-2 for nonbalanced B. Connectedness and absence of bridges alone
+cannot justify ignoring positive-slack cuts. The selection quantifier,
+rather than evaluation of arbitrary X, remains essential.
 
-Validation: `.venv/bin/python -m pytest -q tests/test_induction_cut_slack.py
- tests/test_induction_critical_core.py tests/test_balanced_patterns.py
- tests/test_structural_analysis.py` — **21 passed**, 40.80 seconds.
-Process inspection before computation found no existing compute job.
-Only bounded checks of the specified missing claim and regression tests
-ran; no broad random search or long-running research job was launched.
-The preceding critical-core reduction is preserved in
-[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md).
-Notes and state record the progress. Unrelated overnight log changes were
-left untouched. Final `git diff --check` passed; final process inspection
-found no running compute job. This is a clean research checkpoint.
+No potential complete proof appeared. Notes and state were updated.
+Validation: `.venv/bin/python -m pytest -q
+ tests/test_induction_connected_slack.py
+ tests/test_induction_slack_amplification.py
+ tests/test_induction_cut_slack.py tests/test_induction_critical_core.py`
+— **9 passed**, 59.59 seconds. Only bounded inference tests ran; process
+inspection found no pre-existing compute job. No random search or
+long-running research job was launched. Unrelated overnight logs were
+left untouched. Final diff and process checks are recorded in state.
