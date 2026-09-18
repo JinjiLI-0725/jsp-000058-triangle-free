@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, two-boundary five-set selection):**
+> [INDUCTION_TWO_BOUNDARY_SELECTION.md](INDUCTION_TWO_BOUNDARY_SELECTION.md)
+> **PROVES** that every prescribed coloring on at most two vertices of B_s
+> extends optimally. A private transversal in a balanced piece attached
+> through at most two retained vertices has gamma=2s-1. A proper piece
+> therefore supplies a B witness, provided every part has a private vertex.
+> This covers nonautomatic higher-degree critical cores beyond pendant
+> blocks. General A/B and arbitrary residual-core selection remain open.
+
 > **Latest progress (2026-09-18, pendant five-set selection):**
 > [INDUCTION_PENDANT_SELECTION.md](INDUCTION_PENDANT_SELECTION.md) **PROVES**
 > exact root-avoiding deletion profiles for balanced blocks and constructs
@@ -66,8 +75,8 @@ witness in the core transfers to the original graph. The proof also handles
 B's balanced exception, and proves that a positive complete C5 blow-up is
 edge-critical exactly when balanced.
 
-The next step is to select vertices in cores not covered by those path
-certificates. For k>=4, the earlier degree bound already restricts an
+The next step is to select vertices in cores not covered by the path,
+pendant, or feasible two-boundary balanced-piece certificates. For k>=4, the earlier degree bound already restricts an
 unresolved core to at most four vertices of degree at most three. Thus
 selection involving higher-degree vertices is still essential. One possible
 route is to coordinate optimal cuts witnessing criticality of individual

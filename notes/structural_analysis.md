@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, two-boundary five-set selection):**
+> [INDUCTION_TWO_BOUNDARY_SELECTION.md](INDUCTION_TWO_BOUNDARY_SELECTION.md)
+> **PROVES** that every prescribed coloring on at most two vertices of B_s
+> extends optimally. A private transversal in a balanced piece attached
+> through at most two retained vertices has gamma=2s-1. A proper piece
+> therefore supplies a B witness, provided every part has a private vertex.
+> This covers nonautomatic higher-degree critical cores beyond pendant
+> blocks. General A/B and arbitrary residual-core selection remain open.
+
 > **Latest progress (2026-09-18, pendant five-set selection):**
 > [INDUCTION_PENDANT_SELECTION.md](INDUCTION_PENDANT_SELECTION.md) **PROVES**
 > exact root-avoiding deletion profiles for balanced blocks and constructs
