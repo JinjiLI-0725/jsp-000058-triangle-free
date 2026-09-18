@@ -1,3 +1,10 @@
+> **Latest progress (2026-09-18):**
+> [BALANCED_EXTENSION_T7.md](BALANCED_EXTENSION_T7.md) proves the arbitrary
+> strict balanced-extension theorem for **t>=7**. The mixed range still
+> unresolved is t=2,...,6. For B_inherit, A plus equality uniqueness through
+> k=7 now suffices. General A/B and the q+e obstruction remain open.
+> Earlier thresholds below are historical.
+
 # The two induction routes for JSP-000058
 
 > **New symbolic progress (2026-09-18):**

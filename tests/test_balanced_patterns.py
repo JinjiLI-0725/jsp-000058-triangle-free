@@ -101,3 +101,55 @@ def test_completed_homogeneous_artifacts_without_rerunning_search():
         assert result["next_configuration"] == result["configurations_checked"] == 242500
         assert result["maximal_neighborhood_configurations_checked"] == 1245367
         assert result["max_gap"] == 0
+
+
+def test_t7_exceptional_types_force_unbalanced_compatible_containment():
+    """Audit only the two exceptional F shapes, not extension enumeration.
+
+    Union all patterns allowed by the total surplus budget. A compatible
+    type map for these unions also works for every actual mixed assignment.
+    Compute W from actual cuts, independently of the cover identity.
+    """
+    cycle = tuple((i, (i + 1) % 5) for i in range(5))
+    cuts = [c for c in product(range(2), repeat=5) if c[0] == 0
+            and sum(c[u] == c[v] for u, v in cycle) == 1]
+    maps = [(0,) + tail for tail in product(range(5), repeat=4)]
+    shapes = (
+        (tuple((0, v) for v in range(1, 5)), {(1, 12, 0): 2, (2, 20, 1): 1}),
+        (tuple((u, v) for u in (0, 1) for v in (2, 3, 4)), {(1, 12, 0): 8}),
+    )
+    for edges, expected in shapes:
+        exceptions = {}
+        for types in maps:
+            supports = [sum(1 << v for v in range(5)
+                            if (types[v] - j) % 5 in (1, 4)) for j in range(5)]
+            patterns = [[i for i in range(32) if not i & ~s
+                         and all(not (i >> u & 1 and i >> v & 1)
+                                 for u, v in edges)] for s in supports]
+            alpha = [max(i.bit_count() for i in part) for part in patterns]
+            cover_sum = 10 - sum(alpha)
+            weight = sum(c[types[u]] == c[types[v]] for c in cuts for u, v in edges)
+            budget = weight - 5 - 7 * cover_sum
+            if not cover_sum or budget < 0:
+                continue
+            key = cover_sum, weight, budget
+            exceptions[key] = exceptions.get(key, 0) + 1
+            unions = []
+            for maximum, part in zip(alpha, patterns):
+                union = 0
+                for pattern in part:
+                    if maximum - pattern.bit_count() <= budget:
+                        union |= pattern
+                unions.append(union)
+            # At least one compatible map supports every possible actual edge.
+            # Rotation permits fixing the first type to zero only in the
+            # original classification; the new map uses fixed H part labels.
+            witness = next((new for new in product(range(5), repeat=5)
+                            if all((new[u] - new[v]) % 5 in (1, 4) for u, v in edges)
+                            and all(not (union >> v & 1) or (new[v] - j) % 5 in (1, 4)
+                                    for j, union in enumerate(unions) for v in range(5))), None)
+            assert witness is not None
+            sizes = [7 + witness.count(j) for j in range(5)]
+            assert max(sizes) >= 10
+            assert min(sizes[j] * sizes[(j + 1) % 5] for j in range(5)) <= 63
+        assert exceptions == expected

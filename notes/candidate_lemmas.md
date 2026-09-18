@@ -1,12 +1,13 @@
 # Candidate lemmas and research directions
 
-Current single target (2026-09-18): **CONJECTURAL M for 2<=t<=7**, the mixed-pattern
+Current single target (2026-09-18): **CONJECTURAL M for 2<=t<=6**, the mixed-pattern
 balanced-extension inequality stated precisely in
 [BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md). Its exact cut
 formula is proved. The completed t=1,...,25 homogeneous enumeration does
 not cover M; the former spanning-supergraph reduction is falsified.
-The new [vertex-cover proof](BALANCED_EXTENSION_COVER_BOUND.md) establishes
-the strict arbitrary extension theorem for every t>=8.
+The [cover proof](BALANCED_EXTENSION_COVER_BOUND.md) and its
+[equality-case refinement](BALANCED_EXTENSION_T7.md) establish the strict
+arbitrary extension theorem for every t>=7.
 This is a prerequisite to the balanced-remainder application of A, not a
 replacement proof of general A or B. Historical broad-search suggestions
 below are not the current next action.

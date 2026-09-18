@@ -1,3 +1,7 @@
+> **Latest refinement:** [BALANCED_EXTENSION_T7.md](BALANCED_EXTENSION_T7.md)
+> proves the strict arbitrary theorem also at t=7. Current unresolved mixed
+> range: t=2,...,6. Historical thresholds below are retained for provenance.
+
 # Balanced-extension coverage audit — 2026-09-18
 
 > **Subsequent progress:** [BALANCED_EXTENSION_COVER_BOUND.md](BALANCED_EXTENSION_COVER_BOUND.md)
