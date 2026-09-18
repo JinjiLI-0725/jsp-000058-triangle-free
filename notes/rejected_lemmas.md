@@ -1,5 +1,16 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R9: critical-path deletion losses add
+
+**FALSIFIED (2026-09-18).** Two terminals joined by two length-two and two
+length-three internally disjoint paths give a triangle-free edge-critical
+graph with d=2. Each individual path-interior deletion has loss one, but
+deleting interiors of one path of each parity has total loss one, while
+deleting interiors of two even paths has loss two. Exact signed-path
+reoptimization, not summation of single-path losses, gives the increment.
+See [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md).
+This does not refute A/B; two isolates pad the example to order ten.
+
 ## R8: a constant slack window decides A/B thresholds on 2-connected cores
 
 **FALSIFIED (2026-09-18).** The family F_(a,h) in

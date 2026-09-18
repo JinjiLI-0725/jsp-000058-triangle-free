@@ -236,6 +236,15 @@ rules out that particular way of constructing another equality example.
 
 ## 7. Proposed structural lemmas (unproved)
 
+> **Latest progress (2026-09-18, path-based five-set selection):**
+> [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md) **PROVES**
+> an exact signed-path formula for deletions confined to degree-two interiors.
+> Any nonempty deletion inside one critical path has increment exactly one;
+> deleting interiors of two parallel opposite-parity paths also costs exactly
+> one. A capacity criterion constructs five-set witnesses and restricts the
+> remaining core-selection target. Path losses are not additive. General
+> A/B remain **CONJECTURAL**; no extension enumeration was repeated.
+
 > **Latest progress (2026-09-18, threshold false positives):**
 > [INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md)
 > **FALSIFIES** universal constant slack tests even at the exact A/B

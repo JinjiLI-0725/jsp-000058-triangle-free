@@ -1,74 +1,88 @@
-# Induction checkpoint — 2026-09-18, 2-connected threshold obstruction
+# Induction checkpoint — 2026-09-18, exact path-based selection
 
-JSP-000058 and induction lemmas A/B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: whether 2-connectedness permits a
-universal constant slack window to certify a specified five-set at an
-A/B threshold. See
-[INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md).
+JSP-000058 and general induction lemmas A/B remain **CONJECTURAL**.
+Exactly one bottleneck was addressed: selecting five vertices in a critical
+core with a rigorous bound on the reoptimized increment, restricted in this
+cycle to degree-two path interiors, cycle components, and isolates.
+See [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md).
 
 ## PROVED
 
-The symbolic family F_(a,h), a>=1 and h>=3, is triangle-free,
-2-connected and edge-critical. It joins J_a and B_h at two vertices of
-the independent deleted boundary and replaces one retained edge by a
-nine-edge path. For its specified five-set X,
+Compress maximal degree-two paths to signed parity constraints K, retaining
+loops and parallel constraints. If o counts odd cycle components, then
 
-    k=2a+h+2, d=3a+h^2, gamma=3a+3h, L=2a+3h,
-    minimum slack of a coloring attaining gamma = a.
+    d(C)=D(K)+o.
 
-All two-vertex boundary compatibility, critical-edge witnesses and
-subdivision effects are proved explicitly. With h=a+3, gamma=T_B+1;
-with h=a+4, gamma=T_A+1. Both specializations have d>=2k, and the first
-threshold-violating coloring has slack exactly a.
+For a deletion X confined to path interiors, cycle components and isolates,
+let S be the hit paths and j the number of hit odd cycle components. Then
+
+    gamma_C(X)=D(K)-D(K-S)+j.
+
+Any nonempty interior deletion on one path of an edge-critical core has
+increment exactly one, regardless of the number or spacing of deleted
+vertices. Deleting interiors from two paths with the same endpoints and
+opposite length parity also has loss exactly one, without criticality.
+The two paths must both be hit; total interior capacity at least five
+then suffices to select five vertices. A general capacity criterion gives
+explicit five-set witnesses with loss at most the maximum selected
+constraint cost plus j. The proof constructs an optimal remainder cut
+with q=0, allowing proper recoloring of surviving path fragments.
+
+A/B reduce further to critical cores with no such capacity witness.
+This does not resolve higher-degree selection. For k>=4 the OLD sequential
+degree bound already excludes cores with five vertices of degree at most
+three; the present work does not claim this observation as a new theorem
+or remove the remaining low-degree vertices from the original order.
+
+The nine-edge path in the previous F_(a,h) obstruction supplies five-sets
+of increment exactly one. Thus those arbitrary-set threshold failures
+still do not refute existential A/B.
 
 ## FALSIFIED
 
-Every proposed universal constant slack cutoff for deciding a specified
-five-set's A or B threshold, even on 2-connected nonautomatic critical
-cores. Choose a larger than the cutoff. Unlike earlier examples, these
-are false positives at the actual thresholds, not merely incorrect exact
-increments that still satisfy the threshold.
-
-This does NOT refute A/B: five consecutive internal vertices of the long
-path give a different set with increment at most one. It also does not
-refute the proved graph-dependent cutoff U_X-T-1.
+Additivity of losses from distinct critical paths. Two terminals joined
+by two length-two and two length-three paths give d=2 and are edge-critical.
+Hitting one path of each parity loses one in total, although each alone
+loses one. Hitting two even paths loses two. The exact signed optimization
+cannot be replaced by adding individual critical-edge losses.
 
 ## COMPUTATIONALLY VERIFIED
 
-Exact boundary tables check the symbolic formulas and threshold failures
-for a=1,2,3, with h=a+3 and a+4. They enumerate every Q coloring and every
-B_h part-count pattern, retaining shared vertex colors. Independent graph
-checks verify triangle-freeness and connectivity after every single-vertex
-deletion; a path truth table checks the subdivision inference. Existing
-amplification and full-cut regressions also pass.
+Independent full cut enumeration checks the signed formulas on every
+interior/cycle/isolate deletion subset of five fixed decompositions,
+1536 subsets in total. Fixtures include parallel paths of both parities,
+rooted odd/even loops, odd/even cycle components, and subdivided K4.
+Every original edge deletion is compared with the compressed prediction.
+Separate tests check five separated interior deletions on a critical
+length-ten path, opposite-parity five-set witnesses, and prescribed
+monochromatic edge positions. Existing core-transfer regressions pass.
 
 Validation: `.venv/bin/python -m pytest -q
- tests/test_induction_two_connected_slack.py
- tests/test_induction_slack_amplification.py tests/test_induction_cut_slack.py`
-— **6 passed**, 72.70 seconds. These bounded construction checks are not
-an exhaustive A/B verification. Process inspection before launch found
-no visible existing compute job. Only one test job ran; it finished.
-No broad random search or balanced-extension enumeration ran.
+ tests/test_induction_thread_selection.py tests/test_induction_critical_core.py`
+— **8 passed**, 17.90 seconds. An initial expected subset-count assertion
+was corrected from 1920 to 1536; mathematical assertions had passed.
+These are bounded inference checks, not exhaustive general A/B evidence.
 
-## CONJECTURAL / exact remaining claim
+## CONJECTURAL / remaining claim
 
-A_window/B_window still require choosing five vertices X on each
-nonautomatic critical core so that all cuts through its graph-dependent
-slack window U_X-T-1 satisfy r_X<=T+s, where T=2k-1 for A and T=2k-2
-for nonbalanced B. These remain equivalent to A/B. The new obstruction
-shows that even threshold-only control cannot use a universal constant
-window for an arbitrary X; the selection of X must do real work.
-No reduction of A/B to 2-connected graphs is claimed.
+Select five vertices with q+e<=2k-1 (A), or <=2k-2 in the nonbalanced case
+(B), on nonautomatic edge-critical cores without a path-capacity witness.
+For k>=4 these cores have at most four vertices of degree at most three;
+selection involving higher-degree vertices remains the substantive gap.
+No minimum-degree-four reduction, 2-connected reduction, or general
+optimal-cut sufficiency is claimed. No potential complete proof appeared.
 
 ## Coverage and clean stopping point
 
-All t=1,...,25 artifacts were read: complete=true and max_gap=0 throughout.
-They certify homogeneous extensions. Together with the arbitrary t>=26
-symbolic proof they do not establish an all-t arbitrary extension theorem.
-Subsequent symbolic notes reach t>=3; mixed t=2 remains unresolved. No
-balanced-extension result was used as a premise or recomputed.
+All t=1,...,25 saved artifacts were read: complete=true and max_gap=0.
+Their homogeneous-neighborhood scope and the arbitrary t>=26 symbolic
+proof do not alone establish an arbitrary all-t theorem. Subsequent
+symbolic notes reach t>=3; mixed t=2 remains unresolved. The present
+proof uses no balanced-extension result as a premise. No enumeration
+was repeated and no random search was run.
 
-Notes and state were updated; `git diff --check` passed. Unrelated existing
-overnight log changes were left untouched. No potential complete proof
-appeared. This is a clean research checkpoint, not a claim that the entire
-working tree is clean.
+Process inspection before each test launch found no existing compute job;
+the two test jobs ran sequentially and finished. Notes and state were
+updated; `git diff --check` passed. Unrelated overnight logs were left
+untouched. This is a clean research checkpoint, not a claim that the
+entire working tree is clean.

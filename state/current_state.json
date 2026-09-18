@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_two_connected_threshold_shortcut_falsified",
+  "status": "induction_thread_selection_reduction_proved",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: determine whether 2-connected critical cores admit constant-slack certification of specified five-sets at the A/B thresholds",
-  "next_goal": "Select X controlling the graph-dependent A_window/B_window; universal constant windows fail even for threshold decisions on 2-connected cores",
+  "current_strategy": "Single bottleneck: select five vertices in critical cores while controlling q+e; exact degree-two path compression and capacity witnesses now proved",
+  "next_goal": "Prove A_crit/B_crit selection on cores without a path-capacity witness; for k>=4 unresolved cores have at most four vertices of degree at most three, so higher-degree vertex selection remains essential",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -322,6 +322,30 @@
       "tests_passed": 6,
       "elapsed_seconds": 72.7,
       "scope": "Exact shared-boundary and part-count tables for a=1,2,3 with h=a+3,a+4; graph connectivity after each vertex deletion; path parity tables; existing amplification and cut-slack regressions",
+      "diff_check": "passed",
+      "compute_job_finished": true
+    }
+  },
+  "induction_thread_selection": {
+    "note": "notes/INDUCTION_THREAD_SELECTION.md",
+    "compression_status": "PROVED",
+    "formula": "gamma_C(X)=D(K)-D(K-S)+j for interior/cycle/isolate deletions; S is the set of hit paths and j the number of hit odd cycle components",
+    "single_critical_path_loss": "Exactly one for any nonempty interior deletion",
+    "opposite_parity_parallel_pair_loss": "Exactly one when both interiors are hit, without requiring criticality",
+    "capacity_selection_status": "PROVED sufficient criterion, with exact vertex-count feasibility",
+    "additivity_of_critical_path_losses": "FALSIFIED by two even and two odd parallel paths",
+    "limitations": "No selection theorem on residual cores; no reduction to minimum degree four; low-degree count restriction for k>=4 is a consequence of the preexisting sequential bound",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_thread_selection.py tests/test_induction_critical_core.py",
+      "tests_passed": 8,
+      "elapsed_seconds": 17.9,
+      "scope": "1536 deletion subsets across five fixed decompositions; every original edge deletion versus signed prediction; prescribed path-edge parity witnesses; two five-set constructions; critical-core transfer regressions",
+      "initial_test_correction": "Expected subset count corrected from 1920 to 1536; mathematical assertions passed on the initial run",
       "diff_check": "passed",
       "compute_job_finished": true
     }

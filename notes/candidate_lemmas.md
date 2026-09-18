@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, path-based five-set selection):**
+> [INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md) **PROVES**
+> an exact signed-path formula for deletions confined to degree-two interiors.
+> Any nonempty deletion inside one critical path has increment exactly one;
+> deleting interiors of two parallel opposite-parity paths also costs exactly
+> one. A capacity criterion constructs five-set witnesses and restricts the
+> remaining core-selection target. Path losses are not additive. General
+> A/B remain **CONJECTURAL**; no extension enumeration was repeated.
+
 > **Latest progress (2026-09-18, threshold false positives):**
 > [INDUCTION_TWO_CONNECTED_SLACK.md](INDUCTION_TWO_CONNECTED_SLACK.md)
 > **FALSIFIES** universal constant slack tests even at the exact A/B
@@ -37,7 +46,9 @@
 # Candidate lemmas and research directions
 
 Current single bottleneck (2026-09-18): **CONJECTURAL A_crit/B_crit**, the
-five-vertex q+e selection claim restricted to edge-critical spanning cores.
+five-vertex q+e selection claim restricted to edge-critical spanning cores,
+now excluding cores with a proved five-set capacity certificate from
+[INDUCTION_THREAD_SELECTION.md](INDUCTION_THREAD_SELECTION.md).
 The reduction to this class is **PROVED** in
 [INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md): preserving d while
 removing edges can only increase every five-deletion increment. Thus any
@@ -45,8 +56,12 @@ witness in the core transfers to the original graph. The proof also handles
 B's balanced exception, and proves that a positive complete C5 blow-up is
 edge-critical exactly when balanced.
 
-The next step is to coordinate the optimal cuts witnessing criticality
-of individual edges into one five-set and one remainder coloring. The
+The next step is to select vertices in cores not covered by those path
+certificates. For k>=4, the earlier degree bound already restricts an
+unresolved core to at most four vertices of degree at most three. Thus
+selection involving higher-degree vertices is still essential. One possible
+route is to coordinate optimal cuts witnessing criticality of individual
+edges into one five-set and one remainder coloring. The
 union of their monochromatic edge sets covers all edges, but this does not
 yet control q+e after deletion. A_crit requires only d>=2k; B_crit requires
 d>=2k-1 and excludes B_k. Smaller d is automatic. Neither restricted lemma
