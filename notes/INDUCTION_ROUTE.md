@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, full-cut slack):**
+> [INDUCTION_CUT_SLACK.md](INDUCTION_CUT_SLACK.md) proves the exact identity
+> gamma(X)=max_c(r_X(c)-s(c)). **FALSIFIED:** restricting this maximum to
+> optimal full-graph cuts, even on nonautomatic edge-critical cores.
+> The symbolic family Petersen disjoint-union B_s (s>=3) has a specified
+> five-set with gamma=s+3 but optimal-cut maximum s+2. A slack-one cut
+> accounts for the gap. A/B remain **CONJECTURAL**; positive-slack cuts
+> must be controlled as part of the same five-set selection bottleneck.
+
 > **Latest progress (2026-09-18, critical-core reduction):**
 > [INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md) proves that A and B
 > can each be restricted to spanning edge-critical graphs. If C is a

@@ -1,77 +1,72 @@
-# Induction checkpoint — 2026-09-18, edge-critical spanning cores
+# Induction checkpoint — 2026-09-18, full-cut slack obstruction
 
 JSP-000058 and general induction lemmas A and B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: transferring a five-vertex deletion
-witness from a simpler graph while respecting independently optimized cuts.
+Exactly one bottleneck was addressed: whether the optimal full-graph cuts
+of an edge-critical core suffice to determine five-vertex deletion cost.
+The answer is no. See [INDUCTION_CUT_SLACK.md](INDUCTION_CUT_SLACK.md).
 
 ## Genuine progress — PROVED
 
-[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md) proves:
+For any graph and any vertex set X,
 
-- Every graph G has a spanning edge-critical core C with d(C)=d(G).
-  All original vertices, including isolates, remain.
-- For every X, gamma_G(X)=gamma_C(X)-[d(G-X)-d(C-X)]<=gamma_C(X).
-  The same five-set transfers from C to G. No transfer of the same cut,
-  or separate bound on q and e, is asserted.
-- A is equivalent to A_crit on triangle-free edge-critical graphs with
-  d>=2k. B is equivalent to B_crit on nonbalanced such graphs with
-  d>=2k-1. Smaller-d cases are automatic. B's exception is safe because
-  B_k has no proper triangle-free spanning supergraph.
-- Every edge of a critical graph is monochromatic in some optimal cut
-  and lies on an odd cycle. Bridges and degree-one vertices are absent;
-  isolates remain possible.
-- A complete C5 blow-up with positive part sizes is edge-critical exactly
-  when balanced. The proof accounts for cuts that split parts by random
-  part rounding, rather than assuming all optimal cuts respect parts.
+    gamma_G(X)=max_c(r_X(c)-s(c)),
 
-This is a reduction of the domain of the unproved induction lemmas. It
-neither proves those lemmas nor assumes that a core is simultaneously
-maximal, connected, or a complete blow-up.
+where r_X(c) counts monochromatic edges incident with X, once each, and
+s(c)=b_G(c)-d(G). Equality with the maximum restricted to optimal cuts
+holds exactly when some optimal full-graph cut restricts optimally to G-X.
+This is an exact reformulation of the existing q+e obstruction, not a
+solution of it. A slack cutoff excluding cuts that cannot beat the
+optimal-cut lower bound is also proved in the note.
 
-## Other classifications
+## Candidate O — FALSIFIED
 
-**FALSIFIED:** the same increment-transfer inequality for arbitrary spanning
-subgraphs without d(C)=d(G). C5 plus five isolates versus a path plus five
-isolates gives increments 1 and 0 for the specified common five-set.
-This counterexample does not refute A, B, or JSP-000058.
+Let G_s be Petersen disjoint-union B_s, s>=3. Delete the four Petersen
+vertices {0,1,3,8} in the note's explicit labeling and one B_s vertex.
+The true increment is s+3, but the maximum incident monochromatic count
+over optimal cuts is s+2. A cut of slack one realizes the missing unit.
+The note proves the complete optimal-cut classification of Petersen
+combinatorially, and proves this infinite family is triangle-free,
+edge-critical, and in the nonautomatic domain of both A_crit and B_crit.
 
-**COMPUTATIONALLY VERIFIED:** all 25 saved balanced-extension JSON artifacts
-were read, with complete=true and max_gap=0 throughout. They certify the
-homogeneous family, not arbitrary mixed patterns or uniqueness at equality.
-The t>=26 symbolic argument allows arbitrary patterns; the two scopes do
-not alone establish the all-t arbitrary theorem. Subsequent proofs cover
-t>=3, while mixed t=2 remains **CONJECTURAL**. This cycle's reduction uses
-none of these balanced-extension claims as a premise. No enumeration was
-repeated, and the t=5 empty witness was left unchanged.
+This refutes the proposed optimal-full-cut-only equality. It does not
+refute A/B: the displayed five-set satisfies B. It does not rule out a
+special choice of X admitting compatible optima, or a connected-core
+version of the rejected claim. No complete solution appeared.
 
-**COMPUTATIONALLY VERIFIED:** bounded inference tests verify core extraction
-and the exact increment identity on every five-set of five fixed 10-vertex
-examples, the critical-edge/optimal-cut equivalence on all 388 labeled
-triangle-free five-vertex graphs, and the critical-edge criterion on all
-126 positive ordered C5 size vectors of sum 10. Independent full cuts
-allow split parts. Additional checks cover the transfer counterexample
-and maximality of B_1 and B_2. These do not certify A_crit/B_crit generally.
+## COMPUTATIONALLY VERIFIED
+
+Independent enumeration of the 512 Petersen cuts checks its five optimal
+monochromatic triples, criticality and the slack-one witness. On all 638
+vertex sets of size at most five, the new identity, compatibility criterion
+and slack cutoff agree with independently optimized Gray-code remainder
+cuts. Separate B_3 cut enumeration validates the order-25 component
+certificate; no full order-25 cut enumeration is needed or claimed.
+
+All completed t=1,...,25 artifacts were read, with complete=true and
+max_gap=0. The saved runs certify homogeneous patterns. Together with
+the original arbitrary t>=26 theorem they do not prove the all-t arbitrary
+extension theorem. Later symbolic proofs cover arbitrary t>=3; mixed t=2
+remains **CONJECTURAL**. This cycle uses none of these extension results
+as a premise. No extension enumeration was repeated; result files,
+including the t=5 empty witness, were left unchanged.
 
 ## Exact next claim and clean stopping point
 
-**CONJECTURAL A_crit:** every triangle-free edge-critical C on 5k vertices
-with d(C)>=2k has a five-set X and remainder coloring c satisfying
-q(c)+e_X(c)<=2k-1. The B_crit variant excludes B_k, starts at d>=2k-1,
-and requires <=2k-2. These address the same selection bottleneck.
+The single remaining target is to choose X on a nonautomatic critical
+core such that r_X(c)<=T+s(c) for every coloring c, with T=2k-1 for A,
+or T=2k-2 for nonbalanced B. Edgewise optimal-cut coverage cannot justify
+ignoring positive-slack colorings. Any further argument using this family
+of cuts must control those layers or prove an additional compatibility
+condition. This target remains **CONJECTURAL**.
 
-Criticality gives edgewise optimal-cut witnesses whose monochromatic sets
-cover all edges. The missing argument must coordinate these witnesses to
-choose five vertices and control remainder reoptimization. Simply covering
-edges with different optimal cuts does not do this. The earlier mixed t=2
-subcase remains open but was not the target of this cycle.
-
-Validation: `.venv/bin/python -m pytest -q tests/test_induction_critical_core.py
- tests/test_balanced_patterns.py tests/test_structural_analysis.py` —
-**18 passed**, 26.60 seconds. Process inspection before this test job found
-no existing computation. No long-running research job or random search was
-launched. No potential complete solution appeared, so no POTENTIAL_PROOF.md
-was warranted. State and research notes record the new reduction; existing
-result artifacts and unrelated overnight log changes were left untouched.
-
-Final `git diff --check` passed. Final process inspection found no running
-compute job. This is a clean research checkpoint.
+Validation: `.venv/bin/python -m pytest -q tests/test_induction_cut_slack.py
+ tests/test_induction_critical_core.py tests/test_balanced_patterns.py
+ tests/test_structural_analysis.py` — **21 passed**, 40.80 seconds.
+Process inspection before computation found no existing compute job.
+Only bounded checks of the specified missing claim and regression tests
+ran; no broad random search or long-running research job was launched.
+The preceding critical-core reduction is preserved in
+[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md).
+Notes and state record the progress. Unrelated overnight log changes were
+left untouched. Final `git diff --check` passed; final process inspection
+found no running compute job. This is a clean research checkpoint.

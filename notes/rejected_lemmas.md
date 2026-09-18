@@ -1,5 +1,17 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R6: optimal full-graph cuts determine every critical-core deletion increment
+
+**FALSIFIED (2026-09-18).** On G_s=Petersen disjoint-union B_s, s>=3,
+choose X={0,1,3,8} in the Petersen labeling of
+[INDUCTION_CUT_SLACK.md](INDUCTION_CUT_SLACK.md), together with one B_s
+vertex. Then gamma(X)=s+3, while every optimal full-graph cut has at most
+s+2 monochromatic edges incident with X. These graphs are edge-critical,
+triangle-free, of order 5(s+2), and have d=s^2+3>=2(s+2), so the failure
+occurs in the nonautomatic domain of both A_crit and B_crit. A cut with
+slack one attains the exact increment. This refutes Candidate O, not A/B
+or the possibility of choosing a different five-set with compatible cuts.
+
 ## R5: arbitrary spanning-subgraph reduction transfers deletion increments
 
 **FALSIFIED (2026-09-18).** Let G=C5 plus five isolates and let C remove
