@@ -1,3 +1,11 @@
+> **Latest progress (2026-09-18, occupied-type proof):**
+> [BALANCED_EXTENSION_TYPE_OCCUPANCY.md](BALANCED_EXTENSION_TYPE_OCCUPANCY.md)
+> proves the strict arbitrary balanced-extension theorem for **t>=4**.
+> Only mixed t=2,3 remain unresolved. For B_inherit, A plus equality
+> uniqueness through k=4 now suffices; neither assumption is established.
+> General A/B and the exact q+e obstruction remain open. Earlier thresholds
+> below are historical; all homogeneous t=1,...,25 runs are complete.
+
 > **Latest progress (2026-09-18, t=6 repair):**
 > [BALANCED_EXTENSION_T6.md](BALANCED_EXTENSION_T6.md) proves the strict
 > arbitrary balanced-extension theorem for **t>=6**. Mixed t=2,...,5

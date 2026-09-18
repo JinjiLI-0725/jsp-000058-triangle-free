@@ -1,17 +1,20 @@
 # Candidate lemmas and research directions
 
-Current single target (2026-09-18): **CONJECTURAL M for 2<=t<=5**, the mixed-pattern
-balanced-extension inequality stated precisely in
-[BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md). Its exact cut
-formula is proved. The completed t=1,...,25 homogeneous enumeration does
-not cover M; the former spanning-supergraph reduction is falsified.
-The [cover proof](BALANCED_EXTENSION_COVER_BOUND.md) and its
-[equality-case refinement](BALANCED_EXTENSION_T7.md), together with the
-[bounded-repair proof](BALANCED_EXTENSION_T6.md), establish the strict
-arbitrary extension theorem for every t>=6.
-This is a prerequisite to the balanced-remainder application of A, not a
-replacement proof of general A or B. Historical broad-search suggestions
-below are not the current next action.
+Current single target (2026-09-18): **CONJECTURAL M for t=2,3**, with
+strictness for nonbalanced extensions, in the mixed-pattern representation of
+[BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md).
+The [occupied-type proof](BALANCED_EXTENSION_TYPE_OCCUPANCY.md) establishes
+the strict arbitrary extension theorem for every t>=4, superseding the
+previous t>=6 threshold. It uses an auxiliary blow-up only for H and boundary
+costs, and explicitly charges internal monochromatic edges. No homogeneous
+spanning-supergraph reduction is assumed. The completed homogeneous
+t=1,...,25 enumeration does not settle M in the remaining mixed range.
+
+This advances only the balanced-remainder transition of A/B_inherit.
+General A, B, and the q+e selection obstruction remain conjectural. The
+next precise obstacle is the t=3 noninjective estimate t(t+1)+4=16, which
+misses the required strict bound 15 by one. Historical broad-search
+suggestions below are not the current next action.
 
 Computational evidence is not proof. These statements are not used to prune
 the exhaustive k=2 search or certify the k=3 conjecture.

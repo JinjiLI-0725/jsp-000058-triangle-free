@@ -217,3 +217,76 @@ def test_t6_exceptions_admit_bounded_repair_for_all_mixed_patterns():
                     break
             assert certified, (edges, types, cover_sum, weight, budget)
         assert exceptions > 0
+
+
+def test_noninjective_type_occupancy_supplies_the_claimed_cut():
+    """Check the new symbolic construction, with no neighborhood search."""
+    cycle = tuple((j, (j + 1) % 5) for j in range(5))
+    cuts = [next(c for c in product(range(2), repeat=5) if c[0] == 0
+                 and all((c[u] == c[v]) == (i == sole)
+                         for i, (u, v) in enumerate(cycle))) for sole in range(5)]
+    branches = [0, 0]
+    for tail in product(range(5), repeat=4):
+        types = (0,) + tail
+        counts = [types.count(j) for j in range(5)]
+        if all(counts):
+            continue
+        empty_edges = [i for i, j in cycle if counts[i] == counts[j] == 0]
+        if empty_edges:
+            sole = empty_edges[0]
+            bound = 16
+            branches[0] += 1
+        else:
+            candidates = [i for i, j in cycle
+                          if sorted((counts[i], counts[j])) == [0, 1]]
+            assert candidates
+            sole = candidates[0]
+            bound = 20
+            branches[1] += 1
+            assert len({cuts[sole][j] for j in types}) == 2
+        # Count actual monochromatic H and ALL permitted boundary edges
+        # directly, independently of the auxiliary blow-up product formula.
+        cut = cuts[sole]
+        cost = 16 * sum(cut[u] == cut[v] for u, v in cycle)
+        cost += 4 * sum(cut[f] == cut[j] for f in types
+                        for j in ((f - 1) % 5, (f + 1) % 5))
+        assert cost == bound
+        # The adjacent-empty branch pays at most six internal edges;
+        # the other branch uses the independently checked nonconstant bound.
+        assert cost + (6 if empty_edges else 4) <= 24
+    assert sum(branches) == 625 - 24
+    assert all(branches)
+
+
+def test_five_vertex_nonconstant_cut_bound_and_injective_average():
+    from itertools import permutations
+
+    pairs = tuple(combinations(range(5), 2))
+    cycle = tuple((j, (j + 1) % 5) for j in range(5))
+    cuts = [c for c in product(range(2), repeat=5) if c[0] == 0
+            and sum(c[u] == c[v] for u, v in cycle) == 1]
+    count = 0
+    for mask in range(1024):
+        edges = tuple(e for i, e in enumerate(pairs) if mask >> i & 1)
+        if any(all(e in edges for e in combinations(triple, 2))
+               for triple in combinations(range(5), 3)):
+            continue
+        count += 1
+        for color in range(1, 31):
+            mono = sum(((color >> u) & 1) == ((color >> v) & 1)
+                       for u, v in edges)
+            assert mono <= 4
+        for tail in permutations(range(1, 5)):
+            types = (0,) + tail
+            supports = [{v for v in range(5) if (types[v] - j) % 5 in (1, 4)}
+                        for j in range(5)]
+            assert all(len(s) == 2 for s in supports)
+            cover_sum = sum(any(u in s and v in s for u, v in edges)
+                            for s in supports)
+            weight = sum(c[types[u]] == c[types[v]] for c in cuts for u, v in edges)
+            assert weight == len(edges) + 2 * cover_sum
+            if cover_sum:
+                assert weight - 4 * cover_sum <= 4
+            else:
+                assert all((types[u] - types[v]) % 5 in (1, 4) for u, v in edges)
+    assert count == 388

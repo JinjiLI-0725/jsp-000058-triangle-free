@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_balanced_extension_proved_t_ge_6",
+  "status": "induction_balanced_extension_proved_t_ge_4",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: strict mixed balanced-remainder extension at t=6; surplus-controlled boundary-edge repair proves the theorem for all t>=6",
-  "next_goal": "Prove mixed-pattern inequality M for 2<=t<=5 with strictness for nonbalanced extensions; do not repeat homogeneous t=1,...,25 enumeration",
+  "current_strategy": "Single bottleneck: strict mixed balanced-remainder extension; occupied-type cuts prove the theorem for all t>=4, including the selected t=5 case",
+  "next_goal": "Prove the strict arbitrary mixed balanced-extension theorem for t=2,3; at t=3 improve the noninjective t(t+1)+4 bound by one; do not repeat homogeneous t=1,...,25 enumeration",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -114,14 +114,12 @@
     ],
     "saved_max_gap": 0,
     "finite_status": "COMPUTATIONALLY VERIFIED for homogeneous remainder-part neighborhoods",
-    "symbolic_status": "PROVED for arbitrary extensions at t>=6, including strict equality classification",
+    "symbolic_status": "PROVED for arbitrary extensions at t>=4, including strict equality classification",
     "coverage_reduction_status": "FALSIFIED: a mixed part need not admit a homogeneous triangle-free spanning supergraph",
     "mixed_pattern_formula_status": "PROVED",
     "arbitrary_extension_bound_unresolved_t": [
       2,
-      3,
-      4,
-      5
+      3
     ],
     "finite_equality_classification_from_t_artifacts": false,
     "enumeration_repeated": false,
@@ -134,7 +132,7 @@
       "diff_check": "passed",
       "scope": "Targeted identity, coverage regression, saved artifacts, and structural analysis tests; historical full-suite validation retained separately"
     },
-    "symbolic_improvement_note": "notes/BALANCED_EXTENSION_T6.md"
+    "symbolic_improvement_note": "notes/BALANCED_EXTENSION_TYPE_OCCUPANCY.md"
   },
   "balanced_extension_cover_bound": {
     "status": "PROVED",
@@ -182,6 +180,24 @@
       "tests_passed": 10,
       "elapsed_seconds": 10.7,
       "scope": "1875 normalized type maps for three exceptional shapes, mixed-pattern loss-budget repair checks, existing identity and structural regressions; no full extension enumeration",
+      "diff_check": "passed"
+    }
+  },
+  "balanced_extension_type_occupancy": {
+    "status": "PROVED",
+    "threshold_t": 4,
+    "note": "notes/BALANCED_EXTENSION_TYPE_OCCUPANCY.md",
+    "key_step": "Noninjective maps supply a cut of cost at most t^2+6 or t(t+1)+4; injective maps have W=m+2L and D>=tL; equality forces the complete balanced blow-up",
+    "enumeration_repeated": false,
+    "new_long_running_computation": false,
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "B_inherit_finite_equality_base_needed_through_k": 4,
+    "validation": {
+      "command": ".venv/bin/python -m pytest -q tests/test_balanced_patterns.py tests/test_structural_analysis.py",
+      "tests_passed": 12,
+      "elapsed_seconds": 13.91,
+      "scope": "625 normalized occupancy maps, nonconstant cuts of all 388 triangle-free five-vertex graphs, injective overlap checks, existing balanced-pattern and structural regressions; no full extension enumeration",
       "diff_check": "passed"
     }
   }
