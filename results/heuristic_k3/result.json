@@ -1,0 +1,838 @@
+{
+  "best_d": 9,
+  "best_witnesses": [
+    {
+      "canonical_graph6": "NsaCB`o[?^`}B{^_No?",
+      "components": 1,
+      "cut_side": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "d": 9,
+      "degree_sequence": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "false_twin_class_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "graph6": "NsaCB`o[?^`}B{^_No?",
+      "is_C5_blowup": true,
+      "m": 45,
+      "max_cut": 36,
+      "maximal_triangle_free": true,
+      "n": 15
+    }
+  ],
+  "bound_violations": [],
+  "d_histogram": {
+    "0": 19,
+    "1": 558,
+    "2": 494,
+    "3": 859,
+    "4": 1396,
+    "5": 2103,
+    "6": 3687,
+    "7": 655,
+    "9": 1305
+  },
+  "evaluation_log_sha256": "4ac5b21c4c9212bdb2a3eef1efe920301db4c32e312e178e062e79382e9d0b79",
+  "evaluations": 11076,
+  "exhaustive": false,
+  "families": {
+    "Andrasfai_3": {
+      "best_d": 7,
+      "d_histogram": {
+        "2": 30,
+        "3": 84,
+        "4": 65,
+        "5": 39,
+        "6": 12,
+        "7": 2
+      },
+      "evaluations": 232
+    },
+    "Andrasfai_4": {
+      "best_d": 7,
+      "d_histogram": {
+        "4": 22,
+        "5": 22,
+        "6": 11,
+        "7": 1
+      },
+      "evaluations": 56
+    },
+    "Andrasfai_5": {
+      "best_d": 6,
+      "d_histogram": {
+        "6": 1
+      },
+      "evaluations": 1
+    },
+    "C11": {
+      "best_d": 1,
+      "d_histogram": {
+        "1": 56
+      },
+      "evaluations": 56
+    },
+    "C13": {
+      "best_d": 1,
+      "d_histogram": {
+        "1": 7
+      },
+      "evaluations": 7
+    },
+    "C15": {
+      "best_d": 1,
+      "d_histogram": {
+        "1": 1
+      },
+      "evaluations": 1
+    },
+    "C5": {
+      "best_d": 9,
+      "d_histogram": {
+        "1": 31,
+        "2": 36,
+        "3": 20,
+        "4": 17,
+        "6": 6,
+        "9": 1
+      },
+      "evaluations": 111
+    },
+    "C7": {
+      "best_d": 4,
+      "d_histogram": {
+        "1": 162,
+        "2": 66,
+        "3": 3,
+        "4": 1
+      },
+      "evaluations": 232
+    },
+    "C9": {
+      "best_d": 2,
+      "d_histogram": {
+        "1": 179,
+        "2": 6
+      },
+      "evaluations": 185
+    },
+    "K7_8": {
+      "best_d": 0,
+      "d_histogram": {
+        "0": 1
+      },
+      "evaluations": 1
+    },
+    "Mycielski_C5": {
+      "best_d": 7,
+      "d_histogram": {
+        "4": 9,
+        "5": 61,
+        "6": 42,
+        "7": 13
+      },
+      "evaluations": 125
+    },
+    "Petersen": {
+      "best_d": 7,
+      "d_histogram": {
+        "3": 6,
+        "4": 16,
+        "5": 9,
+        "6": 3,
+        "7": 1
+      },
+      "evaluations": 35
+    },
+    "benchmark": {
+      "best_d": 9,
+      "d_histogram": {
+        "9": 1
+      },
+      "evaluations": 1
+    },
+    "folded_4cube_minus_vertex": {
+      "best_d": 7,
+      "d_histogram": {
+        "7": 1
+      },
+      "evaluations": 1
+    },
+    "local_seed_58": {
+      "best_d": 9,
+      "d_histogram": {
+        "1": 1,
+        "2": 4,
+        "3": 66,
+        "4": 164,
+        "5": 288,
+        "6": 910,
+        "7": 102,
+        "9": 473
+      },
+      "evaluations": 2008
+    },
+    "local_seed_59": {
+      "best_d": 9,
+      "d_histogram": {
+        "0": 1,
+        "1": 10,
+        "2": 31,
+        "3": 69,
+        "4": 200,
+        "5": 456,
+        "6": 783,
+        "7": 227,
+        "9": 231
+      },
+      "evaluations": 2008
+    },
+    "local_seed_60": {
+      "best_d": 9,
+      "d_histogram": {
+        "1": 4,
+        "2": 15,
+        "3": 47,
+        "4": 147,
+        "5": 356,
+        "6": 921,
+        "7": 113,
+        "9": 405
+      },
+      "evaluations": 2008
+    },
+    "local_seed_61": {
+      "best_d": 9,
+      "d_histogram": {
+        "1": 18,
+        "2": 33,
+        "3": 86,
+        "4": 231,
+        "5": 478,
+        "6": 791,
+        "7": 177,
+        "9": 194
+      },
+      "evaluations": 2008
+    },
+    "random_seed_58": {
+      "best_d": 7,
+      "d_histogram": {
+        "0": 1,
+        "1": 15,
+        "2": 67,
+        "3": 130,
+        "4": 131,
+        "5": 95,
+        "6": 55,
+        "7": 6
+      },
+      "evaluations": 500
+    },
+    "random_seed_59": {
+      "best_d": 7,
+      "d_histogram": {
+        "0": 7,
+        "1": 21,
+        "2": 71,
+        "3": 112,
+        "4": 132,
+        "5": 109,
+        "6": 43,
+        "7": 5
+      },
+      "evaluations": 500
+    },
+    "random_seed_60": {
+      "best_d": 7,
+      "d_histogram": {
+        "0": 5,
+        "1": 16,
+        "2": 68,
+        "3": 118,
+        "4": 128,
+        "5": 104,
+        "6": 56,
+        "7": 5
+      },
+      "evaluations": 500
+    },
+    "random_seed_61": {
+      "best_d": 7,
+      "d_histogram": {
+        "0": 4,
+        "1": 37,
+        "2": 67,
+        "3": 118,
+        "4": 133,
+        "5": 86,
+        "6": 53,
+        "7": 2
+      },
+      "evaluations": 500
+    }
+  },
+  "independent_gray_crosschecks": 191,
+  "k": 3,
+  "labelg_sha256": "056f9ec4cb260219f4924e20e9d9467c0464b878316155f42a7a748816388522",
+  "n": 15,
+  "near_extremizers": [
+    {
+      "canonical_graph6": "NsaCB`o[?^`}B{^_No?",
+      "components": 1,
+      "cut_side": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "d": 9,
+      "degree_sequence": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "false_twin_class_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "graph6": "NsaCB`o[?^`}B{^_No?",
+      "is_C5_blowup": true,
+      "m": 45,
+      "max_cut": 36,
+      "maximal_triangle_free": true,
+      "n": 15
+    }
+  ],
+  "networkx": "3.4.2",
+  "numpy": "2.2.6",
+  "parameters": {
+    "acceptance": "accept ties/improvements; accept decrease with exp(delta/temperature)",
+    "checkpoint_every": 500,
+    "local_steps_per_seed": 2000,
+    "operators": [
+      "delete_refill",
+      "rewire_vertex",
+      "force_nonedge"
+    ],
+    "probability_schedule": [
+      0.35,
+      0.6,
+      0.85,
+      1.0
+    ],
+    "random_samples_per_seed": 500,
+    "restart_interval": 250,
+    "seeds": [
+      58,
+      59,
+      60,
+      61
+    ],
+    "structured_enabled": true,
+    "temperature": "1.2 - 1.1 * ((step % 250) / 249)"
+  },
+  "python": "3.10.12",
+  "scope": "Heuristic search of k=3; complete positive-weight enumeration ONLY within the named fixed-base blow-up families. Not exhaustive over triangle-free graphs.",
+  "seed_summaries": [
+    {
+      "evaluations": 2508,
+      "local_best_d": 9,
+      "local_moves_accepted": 972,
+      "random_best_d": 7,
+      "seed": 58
+    },
+    {
+      "evaluations": 2508,
+      "local_best_d": 9,
+      "local_moves_accepted": 1028,
+      "random_best_d": 7,
+      "seed": 59
+    },
+    {
+      "evaluations": 2508,
+      "local_best_d": 9,
+      "local_moves_accepted": 929,
+      "random_best_d": 7,
+      "seed": 60
+    },
+    {
+      "evaluations": 2508,
+      "local_best_d": 9,
+      "local_moves_accepted": 1010,
+      "random_best_d": 7,
+      "seed": 61
+    }
+  ],
+  "source_sha256": {
+    "core.py": "5f6da24710abbf2b6c82f43b5bc9d6a8a4004bcfe33f2c10b6834b22afbec3b2",
+    "heuristic.py": "0422baff651dc7996c43b8b07211277a15536a2d9e0adbe0d1139bda6eebfaf8",
+    "research.py": "f7f9b3ec3630bd345f9ee8b638d526abb58aab56a87f4a74a5a046d5369a9dd0"
+  },
+  "status": "complete",
+  "structured_coverage": {
+    "Andrasfai_3": {
+      "canonical_graphs": 232,
+      "positive_weight_vectors": 3432,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "Andrasfai_4": {
+      "canonical_graphs": 56,
+      "positive_weight_vectors": 1001,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "Andrasfai_5": {
+      "canonical_graphs": 1,
+      "positive_weight_vectors": 14,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C11": {
+      "canonical_graphs": 56,
+      "positive_weight_vectors": 1001,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C13": {
+      "canonical_graphs": 7,
+      "positive_weight_vectors": 91,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C15": {
+      "canonical_graphs": 1,
+      "positive_weight_vectors": 1,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C5": {
+      "canonical_graphs": 111,
+      "positive_weight_vectors": 1001,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C7": {
+      "canonical_graphs": 232,
+      "positive_weight_vectors": 3003,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "C9": {
+      "canonical_graphs": 185,
+      "positive_weight_vectors": 3003,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "Mycielski_C5": {
+      "canonical_graphs": 125,
+      "positive_weight_vectors": 1001,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    },
+    "Petersen": {
+      "canonical_graphs": 35,
+      "positive_weight_vectors": 2002,
+      "scope": "All positive integer weights totaling 15 for this fixed base only"
+    }
+  },
+  "target_bound": 9,
+  "unique_labeled_graphs": 8236
+}

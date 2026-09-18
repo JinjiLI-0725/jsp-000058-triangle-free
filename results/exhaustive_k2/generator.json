@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/tmp/nauty2_9_3/geng",
+    "-t",
+    "10"
+  ],
+  "corpus_sha256": "9b04c7b9837de1643eba4849d0e627a9252b1647a5db23dbceeef62bb11ea5f2",
+  "count": 12172,
+  "coverage": "All non-isomorphic simple triangle-free graphs, disconnected graphs and isolates included; no edge or degree restrictions",
+  "generation_seconds": 0.795470698736608,
+  "generator_stderr": ">A /tmp/nauty2_9_3/geng -td0D9 n=10 e=0-25\n>Z 12172 graphs generated in 0.34 sec\n",
+  "geng_sha256": "27088db4b16f37426a9ac52e2da0242b6ad90227cc9d149e76751c7a3c427e49",
+  "labelg_command": [
+    "/tmp/nauty2_9_3/labelg",
+    "-q"
+  ],
+  "labelg_sha256": "056f9ec4cb260219f4924e20e9d9467c0464b878316155f42a7a748816388522",
+  "n": 10
+}

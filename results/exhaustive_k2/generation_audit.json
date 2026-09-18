@@ -1,0 +1,32 @@
+{
+  "audit_source_sha256": "cc41819c58a6c00578a5794b7477bcc3f003d85c33dcc8d698518ef760ed58d0",
+  "binary_sha256": {
+    "geng": "27088db4b16f37426a9ac52e2da0242b6ad90227cc9d149e76751c7a3c427e49",
+    "labelg": "056f9ec4cb260219f4924e20e9d9467c0464b878316155f42a7a748816388522",
+    "pickg": "fb4edb2ce7c7c9a26a16c316658e366bc0a27e81448768ca38ea1a681a0d8644"
+  },
+  "canonical_sets_equal": true,
+  "commands": [
+    [
+      "/tmp/nauty2_9_3/geng",
+      "10"
+    ],
+    [
+      "/tmp/nauty2_9_3/pickg",
+      "-T0"
+    ],
+    [
+      "/tmp/nauty2_9_3/labelg",
+      "-q"
+    ]
+  ],
+  "corpus_sha256": "9b04c7b9837de1643eba4849d0e627a9252b1647a5db23dbceeef62bb11ea5f2",
+  "elapsed_seconds": 148.092045170255,
+  "generator_stderr": ">A /tmp/nauty2_9_3/geng -d0D9 n=10 e=0-45\n>Z 12005168 graphs generated in 69.37 sec\n",
+  "limitation": "Different generation/filtering paths, but both use the same nauty package; not fully independent software.",
+  "n": 10,
+  "picker_stderr": ">A /tmp/nauty2_9_3/pickg -T0\n>Z 12005168 graphs read from stdin; 12172 written to stdout; 47.13 sec\n",
+  "status": "complete",
+  "triangle_free_graphs": 12172,
+  "unrestricted_graphs": 12005168
+}

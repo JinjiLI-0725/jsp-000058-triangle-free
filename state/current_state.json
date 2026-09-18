@@ -1,40 +1,86 @@
 {
   "problem": "JSP-000058",
-  "status": "baseline_validated",
-  "current_k": 2,
-  "best_d": 4,
-  "target_bound": 4,
-  "graphs_examined": 2389,
-  "graphs_examined_definition": "Cumulative triangle-free evaluations, including repeat samples and benchmark graphs",
-  "current_strategy": "Exact cut enumeration; exhaustive labeled k=1 and seeded random greedy k=2",
-  "next_goal": "Independently cross-check exact solver and broaden systematic counterexample search for k=2",
+  "phase": 2,
+  "status": "phase2_k2_exhaustive_verified_k3_bounded_run_complete",
+  "current_k": 3,
+  "best_d": 9,
+  "target_bound": 9,
+  "best_d_by_k": {
+    "1": 1,
+    "2": 4,
+    "3": 9
+  },
+  "graphs_examined": 25640,
+  "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
+  "current_strategy": "Completed exhaustive k2; bounded structured and heuristic k3 search, with exact MaxCut on all evaluated candidates",
+  "next_goal": "Target non-C5 maximal 15-vertex graphs with d>=8; study nonmaximal near-extremizers and quantitative stability; broaden independent restarts",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
-  "seed": 58,
   "results": [
     {
       "k": 1,
       "best_d": 1,
       "target_bound": 1,
       "graphs_examined": 388,
-      "unique_labeled_graphs": 388,
       "exhaustive": true,
-      "bound_violations": 0,
+      "coverage": "All labeled triangle-free five-vertex graphs",
       "path": "results/baseline/k1_seed58.json"
     },
     {
       "k": 2,
       "best_d": 4,
       "target_bound": 4,
-      "graphs_examined": 2001,
-      "unique_labeled_graphs": 1991,
-      "exhaustive": false,
+      "graphs_examined": 12172,
+      "exhaustive": true,
+      "coverage": "All triangle-free ten-vertex isomorphism classes, including disconnected graphs",
+      "extremizer_classes": 1,
       "bound_violations": 0,
-      "path": "results/baseline/k2_seed58.json"
+      "independent_cut_solvers_agree_on_all": true,
+      "path": "results/exhaustive_k2/result.json",
+      "generation_audit": "results/exhaustive_k2/generation_audit.json",
+      "checkpoint": "results/exhaustive_k2/checkpoint.json"
+    },
+    {
+      "k": 3,
+      "best_d": 9,
+      "target_bound": 9,
+      "graphs_examined": 11076,
+      "unique_labeled_graphs": 8236,
+      "exhaustive": false,
+      "coverage": "Named positive-weight blow-up families plus seeded random and local searches; NOT all triangle-free graphs",
+      "observed_best_isomorphism_classes": 1,
+      "bound_violations": 0,
+      "seeds": [
+        58,
+        59,
+        60,
+        61
+      ],
+      "path": "results/heuristic_k3/result.json",
+      "checkpoint": "results/heuristic_k3/checkpoint.json"
     }
   ],
+  "historical_results": [
+    {
+      "k": 2,
+      "exhaustive": false,
+      "graphs_examined": 2001,
+      "best_d": 4,
+      "path": "results/baseline/k2_seed58.json",
+      "superseded_by": "results/exhaustive_k2/result.json"
+    }
+  ],
+  "supplementary_experiments": {
+    "graphs_examined": 3,
+    "path": "results/structural_checks.json",
+    "purpose": "Counterexamples to stronger structural guesses; none violates JSP-000058"
+  },
   "validation": {
-    "command": ".venv/bin/python -m pytest -q",
-    "tests_passed": 35
+    "status": "passed",
+    "command": "NAUTY_DIR=/tmp/nauty2_9_3 .venv/bin/python -m pytest -q",
+    "tests_passed": 59,
+    "tests_skipped": 0,
+    "elapsed_seconds": 44.79,
+    "source_hashes_match_saved_results": true
   }
 }

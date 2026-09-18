@@ -1,0 +1,16 @@
+{
+  "nauty_version": "2.9.3",
+  "nauty_source_url": "https://users.cecs.anu.edu.au/~bdm/nauty/nauty2_9_3.tar.gz",
+  "nauty_archive_sha256": "9fc4edae04f88a0f5883985be3b39cf7f898fd6cc96e96b9ee25452743cc1b5b",
+  "build_commands": [
+    "tar --no-same-owner -xzf nauty2_9_3.tar.gz",
+    "./configure",
+    "make -j2 geng labelg countg",
+    "make -j2 pickg"
+  ],
+  "compiler": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "base_git_commit": "37e7ade616fdf1cf506297ae91448542635ce647",
+  "platform": "Linux-5.15.0-181-generic-x86_64-with-glibc2.35",
+  "source_reference": "https://users.cecs.anu.edu.au/~bdm/nauty/",
+  "note": "Source archive hash pins the bytes downloaded from the author; it is not an independently signed upstream checksum."
+}
