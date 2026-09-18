@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "k": 1,
+  "n": 5,
+  "target_bound": 1,
+  "strategy": "exhaustive_labeled",
+  "seed": 58,
+  "random_samples": 0,
+  "edge_probability_schedule": [],
+  "candidates_considered": 1024,
+  "triangle_free_evaluations": 388,
+  "unique_labeled_graphs_evaluated": 388,
+  "d_histogram": {
+    "0": 376,
+    "1": 12
+  },
+  "best_d": 1,
+  "best_witnesses": [
+    {
+      "candidate_index": 220,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        3
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 234,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        2
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 316,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        2,
+        3
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 358,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        2
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 425,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        2
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 453,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        2
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 570,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        2,
+        3
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 598,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        2,
+        3
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 665,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        3
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    },
+    {
+      "candidate_index": 707,
+      "source": "exhaustive",
+      "n": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "m": 5,
+      "max_cut": 4,
+      "cut_side": [
+        1,
+        2
+      ],
+      "d": 1,
+      "cuts_examined": 16
+    }
+  ],
+  "bound_violations": [],
+  "scope": "Computational evidence only; random sampling is not exhaustive or uniform. No general proof.",
+  "python_version": "3.10.12"
+}

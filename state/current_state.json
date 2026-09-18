@@ -1,0 +1,40 @@
+{
+  "problem": "JSP-000058",
+  "status": "baseline_validated",
+  "current_k": 2,
+  "best_d": 4,
+  "target_bound": 4,
+  "graphs_examined": 2389,
+  "graphs_examined_definition": "Cumulative triangle-free evaluations, including repeat samples and benchmark graphs",
+  "current_strategy": "Exact cut enumeration; exhaustive labeled k=1 and seeded random greedy k=2",
+  "next_goal": "Independently cross-check exact solver and broaden systematic counterexample search for k=2",
+  "full_solution_claimed": false,
+  "evidence_is_proof": false,
+  "seed": 58,
+  "results": [
+    {
+      "k": 1,
+      "best_d": 1,
+      "target_bound": 1,
+      "graphs_examined": 388,
+      "unique_labeled_graphs": 388,
+      "exhaustive": true,
+      "bound_violations": 0,
+      "path": "results/baseline/k1_seed58.json"
+    },
+    {
+      "k": 2,
+      "best_d": 4,
+      "target_bound": 4,
+      "graphs_examined": 2001,
+      "unique_labeled_graphs": 1991,
+      "exhaustive": false,
+      "bound_violations": 0,
+      "path": "results/baseline/k2_seed58.json"
+    }
+  ],
+  "validation": {
+    "command": ".venv/bin/python -m pytest -q",
+    "tests_passed": 35
+  }
+}
