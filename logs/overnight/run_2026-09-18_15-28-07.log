@@ -4182,3 +4182,8 @@ This reduces the unresolved mixed-extension cases to \(t=2,3\). General A, B, an
 
 Updated notes, checkpoint, and state. All 12 relevant tests passed; `git diff --check` passed. Completed enumerations were not repeated. Stopped at a clean checkpoint.
 Codex exit code: 0
+[main 9d9e611] Automated research checkpoint 2026-09-18_15-28-07
+ 9 files changed, 4576 insertions(+), 92 deletions(-)
+ create mode 100644 logs/overnight/run_2026-09-18_15-28-07.log
+ create mode 100644 notes/BALANCED_EXTENSION_TYPE_OCCUPANCY.md
+ rewrite notes/INDUCTION_CHECKPOINT.md (89%)

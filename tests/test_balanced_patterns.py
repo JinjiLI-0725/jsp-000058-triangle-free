@@ -290,3 +290,92 @@ def test_five_vertex_nonconstant_cut_bound_and_injective_average():
             else:
                 assert all((types[u] - types[v]) % 5 in (1, 4) for u, v in edges)
     assert count == 388
+
+
+def test_t3_occupancy_reduction_and_injective_refinement():
+    """Audit the t=3 symbolic branches, without enumerating extensions."""
+    cycle = tuple((j, (j + 1) % 5) for j in range(5))
+    cuts = [next(c for c in product(range(2), repeat=5) if c[0] == 0
+                 and all((c[u] == c[v]) == (i == sole)
+                         for i, (u, v) in enumerate(cycle))) for sole in range(5)]
+    exceptions = ((0, 2, 0, 1, 2), (0, 3, 0, 1, 1))
+    orbit = {tuple(n[(sign*j + shift) % 5] for j in range(5))
+             for n in exceptions for sign in (-1, 1) for shift in range(5)}
+    seen = set()
+    for tail in product(range(5), repeat=4):
+        types = (0,) + tail
+        n = tuple(types.count(j) for j in range(5))
+        if all(n) or any(n[u] == n[v] == 0 for u, v in cycle):
+            continue
+        candidates = [i for i, j in cycle if sorted((n[i], n[j])) == [0, 1]]
+        if any(sum(n[j] * cuts[i][j] for j in range(5)) in (2, 3)
+               for i in candidates):
+            continue
+        assert n in orbit
+        seen.add(n)
+    # Normalizing f(0)=0 requires type 0 to be occupied.
+    assert seen == {n for n in orbit if n[0] > 0}
+
+    pairs = tuple(combinations(range(5), 2))
+    for mask in range(1024):
+        edges = tuple(e for i, e in enumerate(pairs) if mask >> i & 1)
+        if any(all(e in edges for e in combinations(triple, 2))
+               for triple in combinations(range(5), 3)):
+            continue
+        incompatible = sum((u-v) % 5 not in (1, 4) for u, v in edges)
+        if incompatible:
+            assert len(edges) - incompatible <= 4
+        # The E2 structural deduction, independently on labeled graphs.
+        if (sum(3 not in e for e in edges) == 4
+                and sum(4 not in e for e in edges) == 4):
+            assert len(edges) == 6
+            assert (3, 4) not in edges
+            assert sorted(sum(v in e for e in edges) for v in range(5)) == [2, 2, 2, 3, 3]
+
+
+def test_t3_two_cut_certificates_allow_arbitrary_mixed_patterns():
+    """Check every pattern separately; mixtures then follow by addition.
+
+    E1 deliberately uses independence only in Q, not in a completion of F.
+    Internal attachment bounds are checked separately for all legal subsets.
+    """
+    rows = (
+        ((1, 1, 3, 4, 4), (0, 1), '00101', '00011', '01010', '11100',
+         (2, 0, 0, 0, 0), 4, 28),
+        ((1, 1, 3, 4, 4), (0, 3), '00101', '01011', '00101', '10011',
+         (1, 0, 1, 0, 0), 5, 29),
+        ((1, 1, 1, 3, 4), (0, 1), '00101', '01001', '01001', '11101',
+         (1, 0, 1, 0, 0), 7, 31),
+    )
+    for types, side, c, a, other_c, other_a, expected, cap, total in rows:
+        e2 = types == (1, 1, 1, 3, 4)
+        vertices = range(5) if e2 else (0, 1, 3, 4)
+        required = tuple((u, v) for u in side for v in vertices if v not in side)
+        for color in (c, other_c):
+            assert sum(color[j] == color[(j+1) % 5] for j in range(5)) == 1
+        maxima = []
+        for j in range(5):
+            support = sum(1 << v for v in range(5) if (types[v]-j) % 5 in (1, 4))
+            patterns = [i for i in range(32) if not i & ~support
+                        and all(not (i >> u & 1 and i >> v & 1) for u, v in required)]
+            maxima.append(max(sum(color[v] == remainder[j]
+                                  for remainder, color in ((c, a), (other_c, other_a))
+                                  for v in range(5) if i >> v & 1) for i in patterns))
+        assert tuple(maxima) == expected
+        if e2:
+            internal = sum(color[u] == color[v] for color in (a, other_a)
+                           for u, v in required)
+            assert internal == cap
+        else:
+            costs = []
+            for attachment in range(32):
+                if attachment >> 2 & 1:
+                    continue
+                if any(attachment >> u & 1 and attachment >> v & 1 for u, v in required):
+                    continue
+                edges = required + tuple((2, v) for v in vertices if attachment >> v & 1)
+                costs.append(sum(color[u] == color[v] for color in (a, other_a)
+                                 for u, v in edges))
+            assert len(costs) == 7
+            assert max(costs) == cap
+        assert 18 + cap + 3*sum(maxima) == total <= 31

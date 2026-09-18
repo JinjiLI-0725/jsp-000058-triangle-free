@@ -1,20 +1,18 @@
 # Candidate lemmas and research directions
 
-Current single target (2026-09-18): **CONJECTURAL M for t=2,3**, with
-strictness for nonbalanced extensions, in the mixed-pattern representation of
-[BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md).
-The [occupied-type proof](BALANCED_EXTENSION_TYPE_OCCUPANCY.md) establishes
-the strict arbitrary extension theorem for every t>=4, superseding the
-previous t>=6 threshold. It uses an auxiliary blow-up only for H and boundary
-costs, and explicitly charges internal monochromatic edges. No homogeneous
-spanning-supergraph reduction is assumed. The completed homogeneous
-t=1,...,25 enumeration does not settle M in the remaining mixed range.
+Current single target (2026-09-18): **CONJECTURAL M for t=2**, including
+strictness for nonbalanced arbitrary mixed extensions. The new
+[BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md) proves the strict
+theorem for every t>=3. At t=3 the injective estimate sharpens to m-L<=4;
+noninjective occupancies reduce to two forms, handled by explicit pairs
+of cuts. Their per-vertex pattern bounds allow arbitrary mixtures.
 
-This advances only the balanced-remainder transition of A/B_inherit.
-General A, B, and the q+e selection obstruction remain conjectural. The
-next precise obstacle is the t=3 noninjective estimate t(t+1)+4=16, which
-misses the required strict bound 15 by one. Historical broad-search
-suggestions below are not the current next action.
+This advances only the balanced-remainder transition in A/B_inherit.
+General A/B and the q+e selection obstruction remain conjectural.
+The completed homogeneous t=1,...,25 enumeration does not settle mixed t=2.
+The next precise claim is strict extension of B_2 by five vertices, without
+assuming homogeneous neighborhoods or inferring equality from max_gap=0.
+Historical broad-search suggestions below are not the current next action.
 
 Computational evidence is not proof. These statements are not used to prune
 the exhaustive k=2 search or certify the k=3 conjecture.

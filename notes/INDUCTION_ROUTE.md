@@ -1,3 +1,10 @@
+> **Latest progress (2026-09-18, t=3 two-cut certificates):**
+> [BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md) proves the strict
+> arbitrary balanced-extension theorem for **t>=3**. Only mixed t=2 remains.
+> For B_inherit, A plus equality uniqueness through k=3 now suffices;
+> neither assumption is established. General A/B and the q+e obstruction
+> remain open. Earlier thresholds below are historical.
+
 > **Latest progress (2026-09-18, occupied-type proof):**
 > [BALANCED_EXTENSION_TYPE_OCCUPANCY.md](BALANCED_EXTENSION_TYPE_OCCUPANCY.md)
 > proves the strict arbitrary balanced-extension theorem for **t>=4**.
