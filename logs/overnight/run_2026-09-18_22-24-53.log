@@ -1,0 +1,76 @@
+===== cycle start Fri Sep 18 22:24:53 UTC 2026 =====
+OpenAI Codex v0.155.0
+--------
+workdir: /root/jsp-000058-triangle-free
+model: gpt-6-astra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: none
+reasoning summaries: none
+session id: 01a0b69f-79d0-7951-aeee-1ae877cd5924
+--------
+user
+
+Continue rigorous research on JSP-000058.
+
+FIRST read:
+- PROBLEM.md
+- notes/INDUCTION_CHECKPOINT.md
+- notes/INDUCTION_ROUTE.md
+- notes/structural_analysis.md
+- notes/candidate_lemmas.md
+- notes/rejected_lemmas.md
+- all completed results/balanced_extension/t*.json
+
+Important current milestone:
+The exact balanced-extension enumeration for ALL t=1,...,25 is complete,
+and every case has max_gap=0.
+
+Do NOT redo that computation.
+
+For this cycle:
+
+1. Identify exactly ONE unresolved mathematical bottleneck that is most
+   likely to advance the full conjecture.
+
+2. Prefer, in order:
+   - rigorous proof;
+   - falsification of a candidate lemma;
+   - reduction to a weaker sufficient lemma;
+   - targeted finite computation tied to one precise missing claim.
+
+3. Do not run broad random searches merely to accumulate evidence.
+
+4. Clearly classify findings as:
+   PROVED
+   COMPUTATIONALLY VERIFIED
+   CONJECTURAL
+   FALSIFIED
+
+5. If using the balanced-remainder result, first verify how the t<=25
+   exhaustive certification and t>=26 symbolic argument combine.
+
+6. Focus particularly on induction lemmas A and B and the exact obstruction
+   described in INDUCTION_ROUTE.md.
+
+7. Update notes with genuine progress.
+
+8. Update state/current_state.json if appropriate.
+
+9. Run relevant tests.
+
+10. Stop at a clean checkpoint.
+
+If a potential complete solution appears:
+- write notes/POTENTIAL_PROOF.md;
+- attempt to falsify every inference;
+- do not claim JSP-000058 solved merely because an argument looks plausible.
+
+Never launch more than one long-running computation at once.
+Before launching a compute job, check whether one already exists.
+
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+ERROR: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 19th, 2026 1:23 AM.
+ERROR: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 19th, 2026 1:23 AM.
+Codex exit code: 1
