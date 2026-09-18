@@ -1,5 +1,11 @@
 # The two induction routes for JSP-000058
 
+> **New symbolic progress (2026-09-18):**
+> [BALANCED_EXTENSION_COVER_BOUND.md](BALANCED_EXTENSION_COVER_BOUND.md) proves
+> the strict arbitrary balanced-remainder theorem for **t>=8**, superseding
+> the t>=26 threshold below. Only mixed t=2,...,7 remain unresolved in this
+> special case. General A/B and their q+e obstruction remain open.
+
 > **Current coverage correction (2026-09-18):** read
 > [BALANCED_EXTENSION_AUDIT.md](BALANCED_EXTENSION_AUDIT.md). All saved
 > t=1,...,25 runs are complete with max_gap=0; historical incomplete-run

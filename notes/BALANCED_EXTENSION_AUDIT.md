@@ -1,5 +1,10 @@
 # Balanced-extension coverage audit — 2026-09-18
 
+> **Subsequent progress:** [BALANCED_EXTENSION_COVER_BOUND.md](BALANCED_EXTENSION_COVER_BOUND.md)
+> proves the arbitrary strict extension theorem for t>=8 without enumeration.
+> The unresolved mixed range stated as 2<=t<=25 below is now 2<=t<=7.
+> The coverage correction and exact formula in this audit remain valid.
+
 JSP-000058 remains open. This cycle addresses exactly one bottleneck:
 **does the completed homogeneous-neighborhood enumeration cover arbitrary
 five-vertex extensions of a balanced remainder?** This prerequisite must be

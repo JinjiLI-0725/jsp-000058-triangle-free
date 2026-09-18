@@ -5544,3 +5544,10 @@ Saved the counterexample, corrected formulation, and next precise claim in [the 
 
 Six targeted tests passed; `git diff --check` passed. Stopped at a clean checkpoint without launching a long computation.
 Codex exit code: 0
+[main 8aa309c] Automated research checkpoint 2026-09-18_14-46-12
+ 12 files changed, 5993 insertions(+), 107 deletions(-)
+ create mode 100644 logs/overnight/run_2026-09-18_14-46-12.log
+ create mode 100644 notes/BALANCED_EXTENSION_AUDIT.md
+ rewrite notes/INDUCTION_CHECKPOINT.md (99%)
+ create mode 100644 src/triangle_free/balanced_patterns.py
+ create mode 100644 tests/test_balanced_patterns.py
