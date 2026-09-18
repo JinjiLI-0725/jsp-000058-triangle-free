@@ -4,76 +4,92 @@ set -u
 
 cd ~/jsp-000058-triangle-free
 
-LOG_DIR="logs/overnight"
-mkdir -p "$LOG_DIR"
+mkdir -p logs/overnight
 
 while true; do
     TS=$(date +"%Y-%m-%d_%H-%M-%S")
-    LOG="$LOG_DIR/run_$TS.log"
+    LOG="logs/overnight/run_${TS}.log"
 
-    echo "===== Starting research cycle at $(date) =====" | tee -a "$LOG"
+    echo "===== cycle start $(date) =====" | tee -a "$LOG"
 
     codex exec --sandbox workspace-write "
-You are continuing mathematical research on JSP-000058.
+Continue rigorous research on JSP-000058.
 
-Before doing anything, read:
+FIRST read:
 - PROBLEM.md
 - notes/INDUCTION_CHECKPOINT.md
 - notes/INDUCTION_ROUTE.md
 - notes/structural_analysis.md
 - notes/candidate_lemmas.md
 - notes/rejected_lemmas.md
-- notes/BALANCED_REMAINDER_THEOREM.md if it exists
-- state/current_state.json if it exists
-- relevant results/ files
+- all completed results/balanced_extension/t*.json
 
-Current verified milestone:
-- exhaustive k=1 verification complete;
-- exhaustive k=2 verification complete;
-- heuristic k=3 found equality d(G)=9;
-- exact balanced-extension verification for t=1,...,25 has max_gap=0;
-- the t>=26 balanced-remainder case was previously argued symbolically and must be rechecked carefully.
+Important current milestone:
+The exact balanced-extension enumeration for ALL t=1,...,25 is complete,
+and every case has max_gap=0.
 
-Your job in THIS cycle:
-1. Identify the single most valuable unresolved mathematical step.
-2. Work only on that step.
-3. Prefer proof or falsification over broad random searching.
-4. Use targeted computation only if it directly tests a specific claim.
-5. Clearly separate:
-   - PROVED
-   - COMPUTATIONALLY VERIFIED
-   - CONJECTURAL
-   - FALSIFIED
-6. Never claim JSP-000058 is solved unless a complete rigorous proof exists.
-7. Update the appropriate notes files with any real progress.
-8. Update state/current_state.json.
-9. Run relevant tests before finishing.
-10. End at a clean checkpoint.
+Do NOT redo that computation.
 
-If you find a potential full proof:
-- create notes/POTENTIAL_PROOF.md;
-- immediately try to break every step;
-- do not announce success merely because the argument looks plausible.
+For this cycle:
 
-Do not start an unbounded computation that requires Codex itself to remain alive.
-Long numerical work should be launched as a persistent script with checkpointing.
+1. Identify exactly ONE unresolved mathematical bottleneck that is most
+   likely to advance the full conjecture.
+
+2. Prefer, in order:
+   - rigorous proof;
+   - falsification of a candidate lemma;
+   - reduction to a weaker sufficient lemma;
+   - targeted finite computation tied to one precise missing claim.
+
+3. Do not run broad random searches merely to accumulate evidence.
+
+4. Clearly classify findings as:
+   PROVED
+   COMPUTATIONALLY VERIFIED
+   CONJECTURAL
+   FALSIFIED
+
+5. If using the balanced-remainder result, first verify how the t<=25
+   exhaustive certification and t>=26 symbolic argument combine.
+
+6. Focus particularly on induction lemmas A and B and the exact obstruction
+   described in INDUCTION_ROUTE.md.
+
+7. Update notes with genuine progress.
+
+8. Update state/current_state.json if appropriate.
+
+9. Run relevant tests.
+
+10. Stop at a clean checkpoint.
+
+If a potential complete solution appears:
+- write notes/POTENTIAL_PROOF.md;
+- attempt to falsify every inference;
+- do not claim JSP-000058 solved merely because an argument looks plausible.
+
+Never launch more than one long-running computation at once.
+Before launching a compute job, check whether one already exists.
 " 2>&1 | tee -a "$LOG"
 
-    CODEX_RC=${PIPESTATUS[0]}
+    RC=${PIPESTATUS[0]}
 
-    echo "Codex exit code: $CODEX_RC" | tee -a "$LOG"
+    echo "Codex exit code: $RC" | tee -a "$LOG"
 
     git add .
 
     if ! git diff --cached --quiet; then
-        git commit -m "Automated research checkpoint $TS" | tee -a "$LOG"
+        git commit -m "Automated research checkpoint ${TS}" | tee -a "$LOG"
         git push origin main | tee -a "$LOG"
     else
-        echo "No repository changes this cycle." | tee -a "$LOG"
+        echo "No repository changes." | tee -a "$LOG"
     fi
 
-    echo "===== Cycle finished at $(date) =====" | tee -a "$LOG"
-
-    # Wait 5 minutes before starting the next reasoning cycle.
-    sleep 300
+    # If Codex hit a usage/rate limit, don't hammer it every 5 minutes.
+    if grep -qiE "usage limit|rate limit|try again at" "$LOG"; then
+        echo "Usage limit detected; sleeping 1 hour." | tee -a "$LOG"
+        sleep 3600
+    else
+        sleep 300
+    fi
 done
