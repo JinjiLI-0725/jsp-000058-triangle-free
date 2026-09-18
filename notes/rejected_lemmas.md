@@ -1,5 +1,15 @@
 # Rejected lemmas and unsafe research shortcuts
 
+## R5: arbitrary spanning-subgraph reduction transfers deletion increments
+
+**FALSIFIED (2026-09-18).** Let G=C5 plus five isolates and let C remove
+one cycle edge. Delete X consisting of one cycle vertex and four isolates.
+Then gamma_G(X)=1 while gamma_C(X)=0. Thus gamma_G<=gamma_C cannot be
+inferred merely from C being spanning. The additional condition d(C)=d(G)
+DOES make that inequality valid for every X, as proved in
+[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md). This is not a
+counterexample to A or B.
+
 ## R4: every balanced-remainder extension has a homogeneous supergraph
 
 **FALSIFIED (2026-09-18).** Let H=B_2, add five vertices whose sole internal

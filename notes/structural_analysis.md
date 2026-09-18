@@ -236,6 +236,12 @@ rules out that particular way of constructing another equality example.
 
 ## 7. Proposed structural lemmas (unproved)
 
+New general reduction: [INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md)
+proves that each of A and B is equivalent to its restriction to edge-critical
+spanning graphs (with small-d cases automatic). This preserves vertex count,
+including isolates, and transfers the same five-set using d(C)=d(G).
+The selection lemma on that smaller class remains conjectural.
+
 Current partial progress: [BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md)
 proves that for k>=4, any five-set leaving B_(k-1) satisfies A, and also
 B when G is nonbalanced. This does not select a suitable set in an arbitrary

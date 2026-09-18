@@ -1,82 +1,77 @@
-# Induction checkpoint — 2026-09-18, t=3 two-cut certificates
+# Induction checkpoint — 2026-09-18, edge-critical spanning cores
 
 JSP-000058 and general induction lemmas A and B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: the strict arbitrary mixed-neighborhood
-balanced-extension theorem at t=3.
+Exactly one bottleneck was addressed: transferring a five-vertex deletion
+witness from a simpler graph while respecting independently optimized cuts.
 
 ## Genuine progress — PROVED
 
-Every triangle-free five-vertex extension of B_t for **t>=3** has
- d(G)<=(t+1)^2, with equality exactly for B_(t+1).
-New proof and inference audit: [BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md).
-The earlier occupied-type proof handles t>=4; the new argument closes t=3.
+[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md) proves:
 
-For injective maps the average refines to W-D<=m-L<=4 whenever L>=1:
-six internal edges force K_(2,3), which has at least two incompatible edges.
-For noninjective maps, adjacent empty types or a 2+3 split prove strictness
-immediately. The remaining occupancies, up to dihedral symmetry, are
-(0,2,0,1,2) and (0,3,0,1,1). A failed elementary cut forces an internal C4;
-three explicit pairs of cuts have total costs at most 28,29,31. Thus one
-cut costs at most 15. Their boundary bounds hold vertex by vertex and allow
-arbitrary mixed patterns. Every remainder cut is optimal, so q_H=0.
+- Every graph G has a spanning edge-critical core C with d(C)=d(G).
+  All original vertices, including isolates, remain.
+- For every X, gamma_G(X)=gamma_C(X)-[d(G-X)-d(C-X)]<=gamma_C(X).
+  The same five-set transfers from C to G. No transfer of the same cut,
+  or separate bound on q and e, is asserted.
+- A is equivalent to A_crit on triangle-free edge-critical graphs with
+  d>=2k. B is equivalent to B_crit on nonbalanced such graphs with
+  d>=2k-1. Smaller-d cases are automatic. B's exception is safe because
+  B_k has no proper triangle-free spanning supergraph.
+- Every edge of a critical graph is monochromatic in some optimal cut
+  and lies on an odd cycle. Bridges and degree-one vertices are absent;
+  isolates remain possible.
+- A complete C5 blow-up with positive part sizes is edge-critical exactly
+  when balanced. The proof accounts for cuts that split parts by random
+  part rounding, rather than assuming all optimal cuts respect parts.
 
-The inference audit specifically avoids completing F to K_(2,3) and then
-restricting old boundary patterns by the added edges. In the first exception,
-only the forced C4 constrains those patterns; internal attachments are paid
-for separately. In the second exception, F itself is forced to be K_(2,3).
-The compatible injective branch classifies equality by a missing-edge cut.
+This is a reduction of the domain of the unproved induction lemmas. It
+neither proves those lemmas nor assumes that a core is simultaneously
+maximal, connected, or a complete blow-up.
 
-## Classifications and coverage
+## Other classifications
 
-- **PROVED:** strict arbitrary balanced extensions for all t>=3.
-- **COMPUTATIONALLY VERIFIED:** all saved homogeneous t=1,...,25 artifacts
-  were read and are complete with max_gap=0. No enumeration was repeated.
-  Their witness metadata does not classify equality; the documented empty
-  t=5 witness remains unchanged.
-- **COMPUTATIONALLY VERIFIED:** arbitrary t=1 and equality from the separate
-  exhaustive n=10 corpus; new bounded checks of the proof ingredients.
-- **FALSIFIED:** the earlier homogeneous spanning-supergraph coverage claim.
-  No new lemma was falsified this cycle.
-- **CONJECTURAL:** strict arbitrary mixed t=2; general A/B; JSP-000058.
+**FALSIFIED:** the same increment-transfer inequality for arbitrary spanning
+subgraphs without d(C)=d(G). C5 plus five isolates versus a path plus five
+isolates gives increments 1 and 0 for the specified common five-set.
+This counterexample does not refute A, B, or JSP-000058.
 
-Before using balanced-remainder results, the different scopes of the t<=25
-homogeneous certification and t>=26 arbitrary symbolic proof were verified.
-They do not by themselves establish the arbitrary all-t theorem. The newer
-symbolic arguments now leave only t=2 of that mixed gap.
+**COMPUTATIONALLY VERIFIED:** all 25 saved balanced-extension JSON artifacts
+were read, with complete=true and max_gap=0 throughout. They certify the
+homogeneous family, not arbitrary mixed patterns or uniqueness at equality.
+The t>=26 symbolic argument allows arbitrary patterns; the two scopes do
+not alone establish the all-t arbitrary theorem. Subsequent proofs cover
+t>=3, while mixed t=2 remains **CONJECTURAL**. This cycle's reduction uses
+none of these balanced-extension claims as a premise. No enumeration was
+repeated, and the t=5 empty witness was left unchanged.
 
-## Induction consequence and exact remaining obstruction
+**COMPUTATIONALLY VERIFIED:** bounded inference tests verify core extraction
+and the exact increment identity on every five-set of five fixed 10-vertex
+examples, the critical-edge/optimal-cut equivalence on all 388 labeled
+triangle-free five-vertex graphs, and the critical-edge criterion on all
+126 positive ordered C5 size vectors of sum 10. Independent full cuts
+allow split parts. Additional checks cover the transfer counterexample
+and maximality of B_1 and B_2. These do not certify A_crit/B_crit generally.
 
-For k>=4, every X with G-X=B_(k-1) satisfies A and, for nonbalanced G, B.
-By B_inherit, A plus equality uniqueness through k=3 would imply uniqueness
-at all orders. Neither general A nor that finite equality base is established.
-For arbitrary remainders, finding X,c with q_H(c)+e_X(c)<=2k-1 (or <=2k-2
-for B) remains unresolved. This theorem does not select X there.
+## Exact next claim and clean stopping point
 
-The next precise claim on the same bottleneck is strict arbitrary extension
-of B_2 by five vertices. Do not replace mixed patterns by a homogeneous
-supergraph or use max_gap=0 to infer uniqueness. No potential complete
-solution of JSP-000058 appeared.
+**CONJECTURAL A_crit:** every triangle-free edge-critical C on 5k vertices
+with d(C)>=2k has a five-set X and remainder coloring c satisfying
+q(c)+e_X(c)<=2k-1. The B_crit variant excludes B_k, starts at d>=2k-1,
+and requires <=2k-2. These address the same selection bottleneck.
 
-## Validation and clean stopping point
+Criticality gives edgewise optimal-cut witnesses whose monochromatic sets
+cover all edges. The missing argument must coordinate these witnesses to
+choose five vertices and control remainder reoptimization. Simply covering
+edges with different optimal cuts does not do this. The earlier mixed t=2
+subcase remains open but was not the target of this cycle.
 
-The targeted regressions check occupancy reduction on 625 normalized maps,
-the injective inequality and forced E2 shape on all 388 labeled triangle-free
-five-vertex graphs, and the three pair certificates on every permitted
-independent pattern and internal attachment. Mixtures follow by summing
-these per-vertex bounds. These are ingredient tests, not extension enumeration.
+Validation: `.venv/bin/python -m pytest -q tests/test_induction_critical_core.py
+ tests/test_balanced_patterns.py tests/test_structural_analysis.py` —
+**18 passed**, 26.60 seconds. Process inspection before this test job found
+no existing computation. No long-running research job or random search was
+launched. No potential complete solution appeared, so no POTENTIAL_PROOF.md
+was warranted. State and research notes record the new reduction; existing
+result artifacts and unrelated overnight log changes were left untouched.
 
-A first run passed the certificate test but found a normalization mismatch
-in a test assertion: maps normalized by f(0)=0 cannot have n_0=0. The assertion
-was corrected to compare with the occupied-type-0 subset of the orbit; no
-mathematical statement or certificate changed. Final test results follow.
-
-Exploratory finite checks used only two exceptional type maps, five-vertex
-internal graphs, and pairs of cuts to find the certificates. Every job
-finished before the next compute job; process inspections found no existing
-compute job. No broad random search or balanced-extension rerun was launched.
-Saved result artifacts and pre-existing log changes were left untouched.
-
-Final validation: `.venv/bin/python -m pytest -q tests/test_balanced_patterns.py
- tests/test_structural_analysis.py` — **14 passed**, 13.39 seconds.
-`git diff --check` passed. No research compute job remains running.
-This is a clean checkpoint; state/current_state.json records the new threshold.
+Final `git diff --check` passed. Final process inspection found no running
+compute job. This is a clean research checkpoint.

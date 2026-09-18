@@ -1,18 +1,26 @@
 # Candidate lemmas and research directions
 
-Current single target (2026-09-18): **CONJECTURAL M for t=2**, including
-strictness for nonbalanced arbitrary mixed extensions. The new
-[BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md) proves the strict
-theorem for every t>=3. At t=3 the injective estimate sharpens to m-L<=4;
-noninjective occupancies reduce to two forms, handled by explicit pairs
-of cuts. Their per-vertex pattern bounds allow arbitrary mixtures.
+Current single bottleneck (2026-09-18): **CONJECTURAL A_crit/B_crit**, the
+five-vertex q+e selection claim restricted to edge-critical spanning cores.
+The reduction to this class is **PROVED** in
+[INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md): preserving d while
+removing edges can only increase every five-deletion increment. Thus any
+witness in the core transfers to the original graph. The proof also handles
+B's balanced exception, and proves that a positive complete C5 blow-up is
+edge-critical exactly when balanced.
 
-This advances only the balanced-remainder transition in A/B_inherit.
-General A/B and the q+e selection obstruction remain conjectural.
-The completed homogeneous t=1,...,25 enumeration does not settle mixed t=2.
-The next precise claim is strict extension of B_2 by five vertices, without
-assuming homogeneous neighborhoods or inferring equality from max_gap=0.
-Historical broad-search suggestions below are not the current next action.
+The next step is to coordinate the optimal cuts witnessing criticality
+of individual edges into one five-set and one remainder coloring. The
+union of their monochromatic edge sets covers all edges, but this does not
+yet control q+e after deletion. A_crit requires only d>=2k; B_crit requires
+d>=2k-1 and excludes B_k. Smaller d is automatic. Neither restricted lemma
+is proved or computationally certified at arbitrary order.
+
+The previous balanced-remainder target is still **CONJECTURAL M for t=2**,
+including strictness for nonbalanced arbitrary mixed extensions. The
+[BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md) proof handles t>=3.
+Completed homogeneous t=1,...,25 enumeration does not settle mixed t=2.
+This cycle did not advance or repeat that computation.
 
 Computational evidence is not proof. These statements are not used to prune
 the exhaustive k=2 search or certify the k=3 conjecture.

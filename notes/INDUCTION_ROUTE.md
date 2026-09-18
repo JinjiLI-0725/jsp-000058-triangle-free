@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-18, critical-core reduction):**
+> [INDUCTION_CRITICAL_CORE.md](INDUCTION_CRITICAL_CORE.md) proves that A and B
+> can each be restricted to spanning edge-critical graphs. If C is a
+> spanning subgraph with d(C)=d(G), then gamma_G(X)<=gamma_C(X) for every X.
+> B's balanced exception transfers because B_k is maximal triangle-free.
+> The remaining single target is q+e selection on nonautomatic critical
+> cores. General A/B remain conjectural; mixed t=2 is still unresolved.
+> No balanced-extension enumeration was repeated.
+
 > **Latest progress (2026-09-18, t=3 two-cut certificates):**
 > [BALANCED_EXTENSION_T3.md](BALANCED_EXTENSION_T3.md) proves the strict
 > arbitrary balanced-extension theorem for **t>=3**. Only mixed t=2 remains.

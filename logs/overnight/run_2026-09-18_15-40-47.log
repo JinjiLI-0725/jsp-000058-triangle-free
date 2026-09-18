@@ -4890,3 +4890,8 @@ Only mixed \(t=2\) remains in this extension bottleneck. General A/B and JSP-000
 
 Notes and state updated. All 14 relevant tests passed; `git diff --check` passed. No completed enumeration was repeated. Stopped at a clean checkpoint with no computation running.
 Codex exit code: 0
+[main d233f63] Automated research checkpoint 2026-09-18_15-40-47
+ 9 files changed, 5293 insertions(+), 99 deletions(-)
+ create mode 100644 logs/overnight/run_2026-09-18_15-40-47.log
+ create mode 100644 notes/BALANCED_EXTENSION_T3.md
+ rewrite notes/INDUCTION_CHECKPOINT.md (83%)

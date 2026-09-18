@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_balanced_extension_proved_t_ge_3",
+  "status": "induction_critical_core_reduction_proved",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: strict arbitrary mixed balanced-remainder extension at t=3; now proved using occupancy reduction and three explicit two-cut certificates",
-  "next_goal": "Prove strict arbitrary mixed balanced-extension theorem for t=2; general A/B and q+e selection remain open; do not repeat homogeneous t=1,...,25 enumeration",
+  "current_strategy": "Single bottleneck: transfer five-vertex deletion witnesses through d-preserving spanning cores; exact reduction to edge-critical graphs proved",
+  "next_goal": "Prove A_crit (or B_crit) by coordinating edgewise optimal-cut witnesses to control q+e on a five-vertex deletion; general A/B and mixed t=2 remain open",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -215,6 +215,26 @@
       "tests_passed": 14,
       "elapsed_seconds": 13.39,
       "scope": "Occupancy classification, injective refinement, forced internal shape, per-pattern two-cut certificates and all legal attachments, existing balanced-pattern and structural regressions; no extension enumeration",
+      "diff_check": "passed"
+    }
+  },
+  "induction_critical_core": {
+    "status": "PROVED",
+    "note": "notes/INDUCTION_CRITICAL_CORE.md",
+    "transfer": "d(C)=d(G) and C spanning subgraph imply gamma_G(X)=gamma_C(X)-[d(G-X)-d(C-X)]<=gamma_C(X) for every X",
+    "restricted_A": "CONJECTURAL",
+    "restricted_B": "CONJECTURAL",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_computation": false,
+    "falsified": "Same transfer without equal deletion distances",
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_critical_core.py tests/test_balanced_patterns.py tests/test_structural_analysis.py",
+      "tests_passed": 18,
+      "elapsed_seconds": 26.6,
+      "scope": "Exact core transfer on fixed examples and all five-deletions; critical-edge witnesses on 388 small graphs; every edge of 126 positive order-10 C5 blow-ups; existing balanced-pattern and structural regressions",
       "diff_check": "passed"
     }
   }
