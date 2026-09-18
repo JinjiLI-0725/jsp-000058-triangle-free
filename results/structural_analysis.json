@@ -1,0 +1,456 @@
+{
+  "input_sha256": {
+    "results/exhaustive_k2/graphs.g6": "9b04c7b9837de1643eba4849d0e627a9252b1647a5db23dbceeef62bb11ea5f2",
+    "results/heuristic_k3/evaluations.jsonl": "4ac5b21c4c9212bdb2a3eef1efe920301db4c32e312e178e062e79382e9d0b79"
+  },
+  "reduction_n10": {
+    "A_failures": [],
+    "B_failures": [],
+    "automatic_A": 12171,
+    "automatic_B": 12146,
+    "cores_evaluated": 1630,
+    "graphs": 12172
+  },
+  "reduction_n15": {
+    "A_failures": [],
+    "B_failures": [],
+    "automatic_A": 5112,
+    "automatic_B": 3207,
+    "cores_evaluated": 40425,
+    "graphs": 8237
+  },
+  "scope": "Exhaustive one-vertex neighborhoods; exhaustive n=10 corpus; saved bounded n=15 corpus only.",
+  "source_sha256": "bdaaced51eb2d1065b35670df7f863d04e7a49b42b860e7fe155f16e3d66d7d6",
+  "vertex_patterns": [
+    {
+      "equality_or_better": [
+        {
+          "canonical_graph6": null,
+          "components": 1,
+          "cut_side": [
+            1,
+            3
+          ],
+          "d": 1,
+          "degree_sequence": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "false_twin_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "graph6": "Dhc",
+          "is_C5_blowup": true,
+          "m": 5,
+          "max_cut": 4,
+          "maximal_triangle_free": true,
+          "n": 5
+        }
+      ],
+      "histogram": {
+        "0": 7,
+        "1": 1
+      },
+      "k": 1,
+      "non_C5_equality": 0,
+      "patterns": 8
+    },
+    {
+      "equality_or_better": [
+        {
+          "canonical_graph6": null,
+          "components": 1,
+          "cut_side": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "d": 4,
+          "degree_sequence": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "false_twin_class_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "graph6": "IrWWsMEWW",
+          "is_C5_blowup": true,
+          "m": 20,
+          "max_cut": 16,
+          "maximal_triangle_free": true,
+          "n": 10
+        }
+      ],
+      "histogram": {
+        "2": 38,
+        "3": 8,
+        "4": 1
+      },
+      "k": 2,
+      "non_C5_equality": 0,
+      "patterns": 47
+    },
+    {
+      "equality_or_better": [
+        {
+          "canonical_graph6": null,
+          "components": 1,
+          "cut_side": [
+            2,
+            3,
+            4,
+            8,
+            9,
+            10
+          ],
+          "d": 9,
+          "degree_sequence": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "edges": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              11
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              13
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "false_twin_class_sizes": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "graph6": "N]oxpoF@oMWFoMoMF?w",
+          "is_C5_blowup": true,
+          "m": 45,
+          "max_cut": 36,
+          "maximal_triangle_free": true,
+          "n": 15
+        }
+      ],
+      "histogram": {
+        "6": 172,
+        "7": 33,
+        "8": 15,
+        "9": 1
+      },
+      "k": 3,
+      "non_C5_equality": 0,
+      "patterns": 221
+    }
+  ]
+}

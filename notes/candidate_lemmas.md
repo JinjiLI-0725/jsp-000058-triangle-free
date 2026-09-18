@@ -3,6 +3,11 @@
 Computational evidence is not proof. These statements are not used to prune
 the exhaustive k=2 search or certify the k=3 conjecture.
 
+Update: [structural_analysis.md](structural_analysis.md) proves the blow-up
+reduction and exact C5 formula below, proves local equality rigidity, and
+records tested five-vertex reduction candidates. The earlier evidence and
+research directions below are retained for context.
+
 ## C1: rigidity of equality at multiples of five
 
 Candidate: if a triangle-free graph on 5k vertices has d=k², it is the balanced
@@ -37,7 +42,8 @@ representative weight vectors for every structured family.
 For odd cycle bases, the resulting weighted-cycle formula is expected to be
 `d = min_i w_i*w_(i+1)`: every two-coloring leaves an odd number of cycle edges
 monochromatic, and each individual cycle edge can be the sole monochromatic
-edge. The positive-weight structured search evaluates full graphs directly;
+edge. This formula is now proved in `structural_analysis.md`, including zero weights.
+The positive-weight structured search evaluates full graphs directly;
 it does not rely on this formula for its reported MaxCut values.
 
 ## C3: quantitative stability rather than exact near-equality structure
