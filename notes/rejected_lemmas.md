@@ -109,3 +109,13 @@ The k=3 search samples and mutates graphs and enumerates specific blow-up
 families. Neither repeated discovery of d=9 nor failure to find d>9 implies
 exhaustive coverage of all triangle-free 15-vertex graphs. Only the separate
 k=2 canonical-generation run is exhaustive at its specified order.
+
+## R10: balanced-piece boundary flatness extends to three roots
+
+**FALSIFIED (2026-09-19).** Three prescribed zero-colored roots in consecutive
+parts of B_s force constrained cost s^2+2. The exact proof and a triangle-free
+gluing example with nonadditive deletion distance are in
+[INDUCTION_THREE_BOUNDARY_SELECTION.md](INDUCTION_THREE_BOUNDARY_SELECTION.md).
+Nevertheless the penalty is independent of s for every boundary of size at
+most three. Private-transversal increments therefore remain exactly 2s-1.
+This rejects flatness, not A/B or the three-boundary selection rule.

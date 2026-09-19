@@ -75,3 +75,7 @@ warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your O
 ERROR: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 1:23 AM.
 ERROR: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 1:23 AM.
 Codex exit code: 1
+[main 317034a] Automated research checkpoint 2026-09-19_00-25-35
+ 2 files changed, 81 insertions(+)
+ create mode 100644 logs/overnight/run_2026-09-19_00-25-35.log
+Usage limit detected; sleeping 1 hour.

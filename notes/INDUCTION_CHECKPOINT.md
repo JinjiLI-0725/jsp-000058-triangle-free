@@ -1,78 +1,60 @@
-# Induction checkpoint — 2026-09-18, pendant five-set selection
+# Induction checkpoint — 2026-09-19, three-boundary selection
 
 JSP-000058 and general induction lemmas A/B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: selecting five vertices while
-controlling q+e in critical cores, this cycle through pieces attached at
-one retained vertex. See [INDUCTION_PENDANT_SELECTION.md](INDUCTION_PENDANT_SELECTION.md).
+Exactly one bottleneck was addressed: five-set q+e selection in residual
+critical cores, through balanced pieces with three retained attachments.
+See [INDUCTION_THREE_BOUNDARY_SELECTION.md](INDUCTION_THREE_BOUNDARY_SELECTION.md).
 
 ## PROVED
 
-Using the existing one-vertex gluing identity, deletion increments localize
-exactly to pendant interiors and add across disjoint such interiors.
-For a balanced block B_s, s>=2, avoiding any one prescribed root, the
-minimum increment for deleting j=0,...,5 vertices is respectively
+For at most three prescribed roots in B_s, every constrained boundary
+profile is F_s(a)=s^2+delta(S,a), with delta in {0,2} independent of s.
+A complete root-orbit table constructs upper bounds. Constrained rounding
+and explicit nonnegative quadratic coefficient tables prove lower bounds
+for the two exceptional color patterns, at every admissible s.
 
-    0, s, s, 2s-1, 2s-1, 2s-1.
-
-For C5 the private capacity is four, each nonempty deletion costing one.
-A proper pendant B_s with s>=2 supplies a five-set at cost
-2s-1<=2k-3, hence satisfying B. The construction has a remainder-optimal
-coloring with q=0. This handles vertices of arbitrarily large degree.
-
-A/B hold for critical cores whose nontrivial blocks are balanced C5
-blow-ups or odd cycles, with B's usual balanced exception. The proof
-uses a large leaf block, two C5 leaf blocks, or a single-block component.
-It never discards vertex counts or assumes a conjectural bound on an
-arbitrary block. The equal-d spanning-core transfer gives the same
-five-set upper bound in the original graph.
+If every part has a private vertex, deleting a private transversal from
+such a piece has gamma=2s-1. Both glued optimization problems have the same
+boundary penalty, which cancels. Nested optimal colorings give q=0 and
+e=2s-1. A proper piece has s<=k-1, so its five-set satisfies B and A.
+Equal-d spanning-core transfer carries that upper bound to the original
+graph. No bound on the attached graph is assumed.
 
 ## FALSIFIED
 
-Unconditional extension of additive gluing to two shared boundary vertices:
-a length-two path and a length-three path are each bipartite, but their
-union along both endpoints is C5. This is an inference safeguard, not a
-counterexample to A/B. Single-root gluing was already proved in earlier
-notes; the new progress is the rooted profile and five-set selection.
+Three-root flatness: three zero-colored roots in consecutive parts force
+cost s^2+2. A subdivided claw attached to these roots of B_2 gives d=5,
+rather than the additive value 4. Its private transversal still costs 3.
+Thus constant profile differences suffice even when flatness fails.
+This does not refute A/B.
 
 ## COMPUTATIONALLY VERIFIED
 
-Full cut enumeration checks 398 root-avoiding subsets of B_1/B_2, every
-local increment for B_2 glued to C5 or K2,3 (764 cases), simultaneous
-private deletions in two C5 pieces, and a B_3 transversal. A nonautomatic
-order-20 example (two B_2 blocks sharing a root plus one isolate) has
-only one vertex of degree at most three, d=8, gamma=3, and an explicitly
-checked q=0, e=3 coloring.
-
-Validation ran sequentially:
-
-- `.venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py tests/test_induction_critical_core.py`
-  — 7 passed, 22.42 seconds.
-- After adding the high-degree/q=0 check:
-  `.venv/bin/python -m pytest -q tests/test_induction_pendant_selection.py`
-  — 4 passed, 11.61 seconds.
-
-Together these cover eight distinct tests; the three initial new tests
-were rerun with the added fourth test. These are bounded inference checks,
-not exhaustive general A/B evidence. `git diff --check` passed.
+Bounded checks cover all 20 normalized placement/color rows, each with
+32 quadratic cut templates; independent full cuts for every triple in
+B_1 and B_2; and a triangle-free glued graph with a nested q=0 witness.
+Existing two-boundary regression tests are included. These checks validate
+the algebra and gluing inference; they are not general A/B enumeration.
+Validation: `.venv/bin/python -m pytest -q tests/test_induction_three_boundary_selection.py tests/test_induction_two_boundary_selection.py`
+— **7 passed in 68.99 seconds**. `git diff --check` passed. The test job
+finished; no compute job remains. This is a clean research checkpoint.
 
 ## CONJECTURAL / remaining bottleneck
 
-Select five vertices with q+e<=2k-1 (A), or <=2k-2 in the nonbalanced case
-(B), on residual nonautomatic critical cores lacking the automatic,
-path-capacity, and pendant witnesses. Arbitrary leaf blocks and
-2-connected higher-degree cores remain unresolved. No general reduction
-to 2-connected cores or minimum degree four is claimed.
+Select five vertices with q+e<=2k-1 (A), or <=2k-2 away from B_k (B), on
+nonautomatic critical cores lacking automatic, path-capacity, pendant,
+or feasible three-boundary balanced-piece witnesses. Arbitrary leaf blocks
+and higher-degree cores remain unresolved. No reduction to balanced pieces
+or to 4-connected cores is claimed. Four-root profiles are not addressed.
 
 ## Coverage and stopping point
 
-All t=1,...,25 saved artifacts were read: complete=true and max_gap=0.
-Their homogeneous scope and the arbitrary t>=26 symbolic proof do not
-alone establish the arbitrary all-t result; subsequent symbolic notes
-reach t>=3, leaving mixed t=2 unresolved. No balanced-extension theorem
-was used as a premise. The t=5 empty witness does not classify equality.
-No enumeration was repeated and no random search was run.
-
-Process inspection before each test launch found no existing compute job.
-Both test jobs finished. Notes and state were updated. Unrelated overnight
-logs were left untouched. No potential complete solution appeared.
-This is a clean research checkpoint, not an entirely clean working tree.
+All t=1,...,25 artifacts were read: complete=true and max_gap=0 throughout.
+Their homogeneous scope does not combine with the arbitrary t>=26 symbolic
+argument to prove the arbitrary all-t theorem. Subsequent symbolic notes
+reach t>=3, leaving mixed t=2 unresolved. No balanced-remainder extension
+result was used as a premise. The t=5 empty witness does not classify equality.
+No enumeration was repeated; no random search or long research job was run.
+Process inspection before computation found no existing compute job.
+No potential complete solution appeared. Unrelated overnight logs were left
+untouched. Earlier pendant and two-boundary results remain in their notes.

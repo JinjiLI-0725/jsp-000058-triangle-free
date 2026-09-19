@@ -1,3 +1,11 @@
+> **Latest progress (2026-09-19, three-boundary selection):**
+> [INDUCTION_THREE_BOUNDARY_SELECTION.md](INDUCTION_THREE_BOUNDARY_SELECTION.md)
+> **PROVES** F_s(a)=s^2+delta(a), delta in {0,2}, for at most three retained
+> roots in a balanced piece. The penalty is independent of s, so a private
+> transversal still has gamma=2s-1 and q=0. Proper pieces satisfy B.
+> Three-boundary flatness is **FALSIFIED**, but constant profile differences
+> suffice. Residual-core selection and general A/B remain **CONJECTURAL**.
+
 > **Latest progress (2026-09-18, two-boundary five-set selection):**
 > [INDUCTION_TWO_BOUNDARY_SELECTION.md](INDUCTION_TWO_BOUNDARY_SELECTION.md)
 > **PROVES** that every prescribed coloring on at most two vertices of B_s
