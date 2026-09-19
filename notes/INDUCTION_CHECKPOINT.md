@@ -1,60 +1,61 @@
-# Induction checkpoint — 2026-09-19, three-boundary selection
+# Induction checkpoint — 2026-09-19, four-boundary selection
 
 JSP-000058 and general induction lemmas A/B remain **CONJECTURAL**.
-Exactly one bottleneck was addressed: five-set q+e selection in residual
-critical cores, through balanced pieces with three retained attachments.
-See [INDUCTION_THREE_BOUNDARY_SELECTION.md](INDUCTION_THREE_BOUNDARY_SELECTION.md).
+Exactly one bottleneck was addressed: private-transversal q+e selection
+for balanced pieces with four retained attachment vertices. See
+[INDUCTION_FOUR_BOUNDARY_SELECTION.md](INDUCTION_FOUR_BOUNDARY_SELECTION.md).
 
 ## PROVED
 
-For at most three prescribed roots in B_s, every constrained boundary
-profile is F_s(a)=s^2+delta(S,a), with delta in {0,2} independent of s.
-A complete root-orbit table constructs upper bounds. Constrained rounding
-and explicit nonnegative quadratic coefficient tables prove lower bounds
-for the two exceptional color patterns, at every admissible s.
+Every four-root constrained profile of B_s is s^2 plus 0, 2, 4, or 2s,
+with a fixed polynomial for each boundary placement/coloring. An explicit
+47-row table and nonnegative quadratic coefficients certify every s in
+its admissible range. This includes the lower bounds, not just witnesses.
 
-If every part has a private vertex, deleting a private transversal from
-such a piece has gamma=2s-1. Both glued optimization problems have the same
-boundary penalty, which cancels. Nested optimal colorings give q=0 and
-e=2s-1. A proper piece has s<=k-1, so its five-set satisfies B and A.
-Equal-d spanning-core transfer carries that upper bound to the original
-graph. No bound on the attached graph is assumed.
+If every part has a private vertex, deleting a private transversal gives
+2s-1<=gamma<=2s+1. A remainder-optimal coloring supplies q=0 and an
+extension of cost at most 2s+1. Thus every proper piece supplies A;
+s<=k-2 supplies B. A minimizing remainder boundary row of slope zero
+also supplies B for s=k-1. Equal-d core transfer preserves these bounds.
 
 ## FALSIFIED
 
-Three-root flatness: three zero-colored roots in consecutive parts force
-cost s^2+2. A subdivided claw attached to these roots of B_2 gives d=5,
-rather than the additive value 4. Its private transversal still costs 3.
-Thus constant profile differences suffice even when flatness fails.
-This does not refute A/B.
+Universal size-independent penalties and exact increment 2s-1 beyond
+three roots. Root parts 0022 with colors 0101 have cost s^2+2s.
+Attaching M=2s+1 internally disjoint paths of length three between each
+root pair forces that profile to control both glued minima, giving actual
+gamma=2s+1. This triangle-free construction does not refute A/B.
 
 ## COMPUTATIONALLY VERIFIED
 
-Bounded checks cover all 20 normalized placement/color rows, each with
-32 quadratic cut templates; independent full cuts for every triple in
-B_1 and B_2; and a triangle-free glued graph with a nested q=0 witness.
-Existing two-boundary regression tests are included. These checks validate
-the algebra and gluing inference; they are not general A/B enumeration.
-Validation: `.venv/bin/python -m pytest -q tests/test_induction_three_boundary_selection.py tests/test_induction_two_boundary_selection.py`
-— **7 passed in 68.99 seconds**. `git diff --check` passed. The test job
-finished; no compute job remains. This is a clean research checkpoint.
+All 47 normalized boundary rows and all 32 quadratic templates per row;
+independent orbit coverage; full cuts of every four-root set in B_1/B_2;
+independent feasible-part-count/path-cut checks of the glued obstruction
+at s=3,4,5. Earlier three-boundary regressions are included.
 
-## CONJECTURAL / remaining bottleneck
+Validation: `.venv/bin/python -m pytest -q tests/test_induction_four_boundary_selection.py tests/test_induction_three_boundary_selection.py`
+— **6 passed in 21.61 seconds**. This checks the proof and fixed examples,
+not arbitrary-order A/B enumeration. The test job has finished.
 
-Select five vertices with q+e<=2k-1 (A), or <=2k-2 away from B_k (B), on
-nonautomatic critical cores lacking automatic, path-capacity, pendant,
-or feasible three-boundary balanced-piece witnesses. Arbitrary leaf blocks
-and higher-degree cores remain unresolved. No reduction to balanced pieces
-or to 4-connected cores is claimed. Four-root profiles are not addressed.
+## CONJECTURAL / next mathematical gap
 
-## Coverage and stopping point
+General five-set selection on residual nonautomatic critical cores remains
+open. Within this four-boundary certificate, B is still unresolved by the
+bound when s=k-1 and all optimal remainder boundary rows have slope two.
+No claim is made that this obstruction can occur with only five outside
+vertices, or that every residual core has a balanced piece. Arbitrary leaf
+blocks and higher-degree cores remain unresolved.
 
-All t=1,...,25 artifacts were read: complete=true and max_gap=0 throughout.
-Their homogeneous scope does not combine with the arbitrary t>=26 symbolic
-argument to prove the arbitrary all-t theorem. Subsequent symbolic notes
-reach t>=3, leaving mixed t=2 unresolved. No balanced-remainder extension
-result was used as a premise. The t=5 empty witness does not classify equality.
-No enumeration was repeated; no random search or long research job was run.
-Process inspection before computation found no existing compute job.
-No potential complete solution appeared. Unrelated overnight logs were left
-untouched. Earlier pendant and two-boundary results remain in their notes.
+## Coverage and clean stopping point
+
+All completed t=1,...,25 JSON artifacts were read in full: complete=true,
+max_gap=0. They certify homogeneous neighborhoods. They do not combine
+with the arbitrary t>=26 symbolic theorem to prove all mixed cases;
+later symbolic results reach t>=3 and leave mixed t=2 open. No balanced-
+remainder result was used as a premise. The t=5 empty witness does not
+classify equality. No enumeration was repeated and no random search run.
+Process checks preceded computation; jobs were sequential. No potential
+complete solution appeared. Unrelated overnight logs were left untouched.
+
+`git diff --check` passed. Final process inspection found no running compute
+job. Notes and state are synchronized at this clean research checkpoint.

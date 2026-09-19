@@ -1,3 +1,11 @@
+> **Latest progress (2026-09-19, four-boundary selection):**
+> [INDUCTION_FOUR_BOUNDARY_SELECTION.md](INDUCTION_FOUR_BOUNDARY_SELECTION.md)
+> **PROVES** that four-root profiles are s^2 plus 0, 2, 4, or 2s.
+> A private transversal has increment at most 2s+1: every proper piece
+> supplies A, and s<=k-2 supplies B. **FALSIFIED:** universal increment
+> 2s-1 for four roots, by an explicit triangle-free path attachment.
+> General A/B remain **CONJECTURAL**; no reduction to balanced pieces.
+
 > **Latest progress (2026-09-18, two-boundary five-set selection):**
 > [INDUCTION_TWO_BOUNDARY_SELECTION.md](INDUCTION_TWO_BOUNDARY_SELECTION.md)
 > **PROVES** that every prescribed coloring on at most two vertices of B_s

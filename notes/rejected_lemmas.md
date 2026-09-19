@@ -119,3 +119,14 @@ gluing example with nonadditive deletion distance are in
 Nevertheless the penalty is independent of s for every boundary of size at
 most three. Private-transversal increments therefore remain exactly 2s-1.
 This rejects flatness, not A/B or the three-boundary selection rule.
+
+## R11: four-root pieces retain constant profile differences
+
+**FALSIFIED (2026-09-19).** Two opposite-colored root pairs in nonadjacent
+parts of B_s have constrained cost s^2+2s, hence size increment 2s+1.
+Attaching M=2s+1 disjoint length-three paths between each pair forces this
+row to minimize the glued cost, yielding an actual private-transversal
+increment 2s+1 for s>=3. The graph is triangle-free and may be padded with
+isolates to order 5k. This refutes the exact 2s-1 piece rule, not A/B.
+[INDUCTION_FOUR_BOUNDARY_SELECTION.md](INDUCTION_FOUR_BOUNDARY_SELECTION.md)
+proves the weaker universal 2s+1 bound and its selection consequences.

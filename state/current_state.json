@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000058",
   "phase": 2,
-  "status": "induction_three_boundary_selection_proved",
+  "status": "induction_four_boundary_selection_proved",
   "current_k": 3,
   "best_d": 9,
   "target_bound": 9,
@@ -12,8 +12,8 @@
   },
   "graphs_examined": 25640,
   "graphs_examined_definition": "Cumulative objective evaluation requests: baseline 2389, exhaustive k2 12172, k3 main 11076, structural checks 3; includes repeats. Does not count generation-only or second-solver checks.",
-  "current_strategy": "Single bottleneck: five-set q+e selection in critical cores; proved scale-independent three-boundary profiles and private-transversal witnesses",
-  "next_goal": "Select five vertices in residual nonautomatic critical cores lacking automatic, path, pendant, and feasible three-boundary balanced-piece witnesses; no reduction to balanced pieces or higher connectivity is proved",
+  "current_strategy": "Single bottleneck: private-transversal q+e selection with four retained roots; exact profiles and a weaker sufficient bound proved",
+  "next_goal": "Select five vertices on residual nonautomatic critical cores; four-boundary proper pieces now give A, while B remains unresolved by this certificate at s=k-1 when size-dependent rows control the remainder optimum",
   "full_solution_claimed": false,
   "evidence_is_proof": false,
   "results": [
@@ -415,6 +415,29 @@
       "scope": "20 normalized symbolic profile rows with 32 templates each; full cuts of every B_1/B_2 triple; nonflat gluing and nested optimum; existing two-boundary tests",
       "diff_check": "passed",
       "compute_job_finished": true
+    }
+  },
+  "induction_four_boundary_selection": {
+    "status": "PROVED",
+    "note": "notes/INDUCTION_FOUR_BOUNDARY_SELECTION.md",
+    "profile": "F_s(a)=s^2+lambda*s+delta; (lambda,delta) in {(0,0),(0,2),(0,4),(2,0)} for four roots",
+    "selection": "Private transversal has 2s-1<=gamma<=2s+1 and a q=0 upper-bound witness; proper pieces supply A; s<=k-2 supplies B",
+    "falsified": "Universal size-independent boundary penalty and universal exact private-transversal increment 2s-1 for four roots",
+    "counterexample": "Two opposite-colored pairs in nonadjacent parts, enforced by M=2s+1 internally disjoint length-three paths per pair; actual gamma=2s+1",
+    "limitations": "No reduction to balanced pieces or higher connectivity; B at s=k-1 is not settled by this bound; no edge-criticality claim for the counterexample",
+    "general_A": "CONJECTURAL",
+    "general_B": "CONJECTURAL",
+    "balanced_extension_enumeration_repeated": false,
+    "new_long_running_research_computation": false,
+    "validation": {
+      "status": "passed",
+      "command": ".venv/bin/python -m pytest -q tests/test_induction_four_boundary_selection.py tests/test_induction_three_boundary_selection.py",
+      "tests_passed": 6,
+      "elapsed_seconds": 21.61,
+      "scope": "47 symbolic rows, 32 quadratic templates each, exhaustive orbit coverage, full cuts of all four-root sets in B1/B2, independent part-count and path-cut gluing at s=3,4,5, existing three-boundary regressions",
+      "compute_job_finished": true,
+      "diff_check": "passed",
+      "final_process_check": "No running compute job"
     }
   }
 }
