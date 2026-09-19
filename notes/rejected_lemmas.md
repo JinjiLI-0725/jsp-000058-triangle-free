@@ -130,3 +130,14 @@ increment 2s+1 for s>=3. The graph is triangle-free and may be padded with
 isolates to order 5k. This refutes the exact 2s-1 piece rule, not A/B.
 [INDUCTION_FOUR_BOUNDARY_SELECTION.md](INDUCTION_FOUR_BOUNDARY_SELECTION.md)
 proves the weaker universal 2s+1 bound and its selection consequences.
+
+## R12: every five-root profile is a single quadratic in the piece size
+
+**FALSIFIED (2026-09-19).** Five retained roots in parts 00113, colored
+00001, have constrained cost t^2+min(2t,8) for every integer t>=2.
+This has a genuine change of polynomial at t=4. The exact all-size
+certificate is in [INDUCTION_FIVE_BOUNDARY_SELECTION.md](INDUCTION_FIVE_BOUNDARY_SELECTION.md).
+The penalty's consecutive increments are still between zero and two,
+which is sufficient for the private-transversal bound. The five-outside-
+vertex budget also removes the B gap. This refutes a profile shortcut,
+not A/B or the earlier four-root classification.

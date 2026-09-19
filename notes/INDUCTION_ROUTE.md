@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-19, five-boundary selection):**
+> [INDUCTION_FIVE_BOUNDARY_SELECTION.md](INDUCTION_FIVE_BOUNDARY_SELECTION.md)
+> **PROVES** that every proper balanced piece with at most five retained
+> attachment roots and a private transversal supplies B (and A), with
+> gamma<=2k-3. At s=k-1, a five-outside-vertex recoloring argument gives
+> gamma=2s-1 and q=0. **FALSIFIED:** the single-polynomial profile shortcut;
+> one five-root penalty is min(2s,8). General A/B remain **CONJECTURAL**;
+> arbitrary residual cores still lack a selection theorem.
+
 > **Latest progress (2026-09-19, four-boundary outside budget):**
 > [INDUCTION_FOUR_BOUNDARY_BUDGET.md](INDUCTION_FOUR_BOUNDARY_BUDGET.md)
 > **PROVES** that at most five outside vertices always permit a slope-zero

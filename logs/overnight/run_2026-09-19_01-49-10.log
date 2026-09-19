@@ -5680,3 +5680,9 @@ The [proof and inference audit](/root/jsp-000058-triangle-free/notes/INDUCTION_F
 
 **CONJECTURAL:** General A/B and JSP-000058 remain open. Stopped at a clean checkpoint with no computation running.
 Codex exit code: 0
+[main e600cd2] Automated research checkpoint 2026-09-19_01-49-10
+ 10 files changed, 6082 insertions(+), 66 deletions(-)
+ create mode 100644 logs/overnight/run_2026-09-19_01-49-10.log
+ rewrite notes/INDUCTION_CHECKPOINT.md (79%)
+ create mode 100644 notes/INDUCTION_FOUR_BOUNDARY_BUDGET.md
+ create mode 100644 tests/test_induction_four_boundary_budget.py

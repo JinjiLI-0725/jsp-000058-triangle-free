@@ -1,0 +1,1568 @@
+{
+  "status": "PROVED finite integer-polynomial certificate; audited by tests",
+  "scope": "All five-root constrained profiles in B_t, integer t >= maximum roots per part",
+  "orbits": 111,
+  "rows": [
+    {
+      "parts": "00000",
+      "colors": "00000",
+      "minimum_size": 5,
+      "regions": [
+        {
+          "lo": 5,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00000",
+      "colors": "00001",
+      "minimum_size": 5,
+      "regions": [
+        {
+          "lo": 5,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00001",
+      "colors": "00000",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00001",
+      "colors": "00001",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00002",
+      "colors": "00000",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00002",
+      "colors": "00001",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00000",
+      "colors": "00011",
+      "minimum_size": 5,
+      "regions": [
+        {
+          "lo": 5,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00001",
+      "colors": "00010",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00001",
+      "colors": "00011",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00002",
+      "colors": "00010",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00002",
+      "colors": "00011",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 6,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 6,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00010",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00010",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00000",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00001",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00011",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10110"
+        }
+      ]
+    },
+    {
+      "parts": "00001",
+      "colors": "00110",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00002",
+      "colors": "00110",
+      "minimum_size": 4,
+      "regions": [
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "11010"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00011",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00110",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00012",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "11010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00110",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "11010"
+        }
+      ]
+    },
+    {
+      "parts": "00013",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00014",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10101"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00100",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00101",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00022",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00023",
+      "colors": "00111",
+      "minimum_size": 3,
+      "regions": [
+        {
+          "lo": 3,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": 4,
+          "slope": 2,
+          "constant": 0,
+          "bits": "01010"
+        },
+        {
+          "lo": 4,
+          "hi": null,
+          "slope": 0,
+          "constant": 8,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00114",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00114",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00134",
+      "colors": "00001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 4,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00134",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00144",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "00110",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "00110",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "00100",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "00101",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00100",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00101",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00101",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00110",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "00111",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10110"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "00111",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00100",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00101",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10100"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "00111",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00223",
+      "colors": "00010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "00223",
+      "colors": "00011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10110"
+        }
+      ]
+    },
+    {
+      "parts": "00112",
+      "colors": "01010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00113",
+      "colors": "01010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "11010"
+        }
+      ]
+    },
+    {
+      "parts": "00122",
+      "colors": "01001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "01000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "01001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "01000",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "01001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "01010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00123",
+      "colors": "01011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "01010",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00124",
+      "colors": "01011",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    },
+    {
+      "parts": "00133",
+      "colors": "01001",
+      "minimum_size": 2,
+      "regions": [
+        {
+          "lo": 2,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "01001"
+        }
+      ]
+    },
+    {
+      "parts": "01234",
+      "colors": "00000",
+      "minimum_size": 1,
+      "regions": [
+        {
+          "lo": 1,
+          "hi": null,
+          "slope": 2,
+          "constant": 2,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "01234",
+      "colors": "00001",
+      "minimum_size": 1,
+      "regions": [
+        {
+          "lo": 1,
+          "hi": null,
+          "slope": 0,
+          "constant": 2,
+          "bits": "10010"
+        }
+      ]
+    },
+    {
+      "parts": "01234",
+      "colors": "00011",
+      "minimum_size": 1,
+      "regions": [
+        {
+          "lo": 1,
+          "hi": null,
+          "slope": 2,
+          "constant": 0,
+          "bits": "00101"
+        }
+      ]
+    },
+    {
+      "parts": "01234",
+      "colors": "00101",
+      "minimum_size": 1,
+      "regions": [
+        {
+          "lo": 1,
+          "hi": null,
+          "slope": 0,
+          "constant": 0,
+          "bits": "01010"
+        }
+      ]
+    }
+  ]
+}
