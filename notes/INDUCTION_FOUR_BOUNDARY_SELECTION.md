@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-19, four-boundary outside budget):**
+> [INDUCTION_FOUR_BOUNDARY_BUDGET.md](INDUCTION_FOUR_BOUNDARY_BUDGET.md)
+> **PROVES** that at most five outside vertices always permit a slope-zero
+> optimal boundary row. Thus the previously unresolved s=k-1 private
+> transversal has gamma=2s-1 and q=0. Combined with the earlier bound,
+> every proper balanced piece with at most four attachment roots and a
+> private transversal supplies B, with gamma<=2k-3. General A/B remain
+> **CONJECTURAL**; no reduction of arbitrary cores to such pieces is known.
+
 # Four-boundary selection and the first size-dependent penalty
 
 Date: 2026-09-19. Exactly one bottleneck addressed: private-transversal

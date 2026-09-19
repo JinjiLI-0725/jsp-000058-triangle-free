@@ -1,3 +1,12 @@
+> **Latest progress (2026-09-19, four-boundary outside budget):**
+> [INDUCTION_FOUR_BOUNDARY_BUDGET.md](INDUCTION_FOUR_BOUNDARY_BUDGET.md)
+> **PROVES** that at most five outside vertices always permit a slope-zero
+> optimal boundary row. Thus the previously unresolved s=k-1 private
+> transversal has gamma=2s-1 and q=0. Combined with the earlier bound,
+> every proper balanced piece with at most four attachment roots and a
+> private transversal supplies B, with gamma<=2k-3. General A/B remain
+> **CONJECTURAL**; no reduction of arbitrary cores to such pieces is known.
+
 > **Latest progress (2026-09-19, four-boundary selection):**
 > [INDUCTION_FOUR_BOUNDARY_SELECTION.md](INDUCTION_FOUR_BOUNDARY_SELECTION.md)
 > **PROVES** that four-root profiles are s^2 plus 0, 2, 4, or 2s.
@@ -92,7 +101,7 @@ B's balanced exception, and proves that a positive complete C5 blow-up is
 edge-critical exactly when balanced.
 
 The next step is to select vertices in cores not covered by the path,
-pendant, or feasible two-boundary balanced-piece certificates. For k>=4, the earlier degree bound already restricts an
+pendant, or feasible balanced-piece certificates with at most four attachment roots. For k>=4, the earlier degree bound already restricts an
 unresolved core to at most four vertices of degree at most three. Thus
 selection involving higher-degree vertices is still essential. One possible
 route is to coordinate optimal cuts witnessing criticality of individual
