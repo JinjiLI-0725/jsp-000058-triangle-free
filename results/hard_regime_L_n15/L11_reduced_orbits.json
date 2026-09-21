@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "method": "multiplicity vectors over the 11 independent C5 subsets; Burnside orbit count; additive minimization with a matching-only profile DP",
+  "type_order": [[], [0], [1], [2], [3], [4], [0, 2], [1, 3], [2, 4], [0, 3], [1, 4]],
+  "isolated_ten_assignment_contribution_by_size": {"0": 0, "1": 5, "2": 6},
+  "shapes": {
+    "zero": {
+      "endpoint_tuples": 1,
+      "distinct_endpoint_profiles": 1,
+      "exact_min_total_gain": 29,
+      "witness": {
+        "endpoint_neighbourhoods": [],
+        "isolated_multiplicities": [5, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0],
+        "isolated_type_order": [[], [0], [1], [2], [3], [4], [0, 2], [1, 3], [2, 4], [0, 3], [1, 4]],
+        "endpoint_boundary": 0,
+        "isolated_boundary": 9,
+        "total_boundary": 9,
+        "assignment_gains": [9, 0, 1, 0, 0, 1, 9, 0, 0, 9],
+        "total_gain": 29
+      },
+      "matching_vectors_examined": 0,
+      "matching_vectors_pruned_by_monotone_bound": 0,
+      "reduced_states_before_symmetry": 178464,
+      "reduced_states_after_symmetry": 18320
+    },
+    "one": {
+      "endpoint_tuples": 81,
+      "distinct_endpoint_profiles": 81,
+      "exact_min_total_gain": 27,
+      "witness": {
+        "endpoint_neighbourhoods": [[0], [2]],
+        "isolated_multiplicities": [4, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0],
+        "isolated_type_order": [[], [0], [1], [2], [3], [4], [0, 2], [1, 3], [2, 4], [0, 3], [1, 4]],
+        "endpoint_boundary": 2,
+        "isolated_boundary": 7,
+        "total_boundary": 9,
+        "assignment_gains": [7, 0, 3, 0, 0, 3, 7, 0, 0, 7],
+        "total_gain": 27
+      },
+      "matching_vectors_examined": 0,
+      "matching_vectors_pruned_by_monotone_bound": 0,
+      "reduced_states_before_symmetry": 3442706,
+      "reduced_states_after_symmetry": 175386
+    },
+    "path": {
+      "endpoint_tuples": 621,
+      "distinct_endpoint_profiles": 621,
+      "exact_min_total_gain": 23,
+      "witness": {
+        "endpoint_neighbourhoods": [[0], [], [1, 4]],
+        "isolated_multiplicities": [4, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0],
+        "isolated_type_order": [[], [0], [1], [2], [3], [4], [0, 2], [1, 3], [2, 4], [0, 3], [1, 4]],
+        "endpoint_boundary": 3,
+        "isolated_boundary": 6,
+        "total_boundary": 9,
+        "assignment_gains": [7, 0, 1, 0, 1, 0, 6, 1, 1, 6],
+        "total_gain": 23
+      },
+      "matching_vectors_examined": 0,
+      "matching_vectors_pruned_by_monotone_bound": 0,
+      "reduced_states_before_symmetry": 11730131,
+      "reduced_states_after_symmetry": 665015
+    },
+    "matching": {
+      "endpoint_tuples": 6561,
+      "distinct_endpoint_profiles": 3267,
+      "exact_min_total_gain": 17,
+      "witness": {
+        "endpoint_neighbourhoods": [[0], [2], [2], [0, 3]],
+        "isolated_multiplicities": [4, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+        "isolated_type_order": [[], [0], [1], [2], [3], [4], [0, 2], [1, 3], [2, 4], [0, 3], [1, 4]],
+        "endpoint_boundary": 5,
+        "isolated_boundary": 4,
+        "total_boundary": 9,
+        "assignment_gains": [3, 0, 2, 3, 3, 2, 2, 1, 0, 1],
+        "total_gain": 17
+      },
+      "matching_vectors_examined": 6350,
+      "matching_vectors_pruned_by_monotone_bound": 26122429,
+      "reduced_states_before_symmetry": 51250771,
+      "reduced_states_after_symmetry": 673334
+    }
+  },
+  "global_min_total_gain": 17,
+  "status": "finite_certificate_minimum_at_least_7"
+}
